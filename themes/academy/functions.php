@@ -2,8 +2,6 @@
 
 // include main Theme Class
 require get_template_directory() . '/inc/Corppix.php';
-require get_template_directory() . '/inc/Custom_sublevel_menu.php';
-require get_template_directory() . '/inc/Custom_sublevel_menu_mobile.php';
 
 $corppix = new Corppix();
 
