@@ -1,0 +1,145 @@
+@import "_reset.scss";
+// @import "_keyfames.scss";
+
+@import "_variables.scss";
+@import "_mixin.scss";
+@import "_selectors.scss";
+
+
+// @import "parts/_modal_window.scss";
+@import "parts/_common-styles.scss";
+@import "parts/_grid.scss";
+@import "components/_buttons.scss";
+@import "parts/_header.scss";
+@import "parts/_first-section.scss";
+
+
+@import "sections/_course-header.scss";
+
+
+
+
+
+// @import "parts/_page-screen-navigation.scss";
+// @import "parts/_fixed-menu.scss";
+// @import "parts/_fixed-video-holder.scss";
+// @import "parts/_cookie-policy-box.scss";
+// @import "pages/_report-page.scss";
+
+// @import "sections/_home-top-section.scss";
+// @import "pages/_error404-page.scss";
+// @import "sections/_first-section";
+// @import "pages/_single-cases-page.scss";
+// @import "pages/_sorry_page-page.scss";
+// @import "pages/_single-vacancies-page.scss";
+// @import "pages/_get-a-quote-page.scss";
+// @import "pages/_thank-you-two-page.scss";
+// @import "sections/_pay-section.scss";
+// @import "pages/_terms-page.scss";
+// @import "sections/_first-skew-section.scss";
+// @import "sections/_first-report-section.scss";
+// @import "sections/_blog-header-section.scss";
+// @import "sections/_blog-section.scss";
+// @import "pages/_single.scss";
+
+
+
+
+// @import "libs/_slick.scss";
+// @import "libs/_intlTelInput.scss";
+
+
+// @import "parts/_footer.scss";
+// @import "parts/_ui-datepicker.scss";
+// @import "parts/_testimonials-popup.scss";
+// @import "parts/_apply-filters.scss"; // deprecated
+// @import "parts/_cases-filter.scss"; // deprecated
+@import "parts/_form.scss";
+
+
+// @import "sections/_we-deliver-section.scss";
+// @import "sections/_we-provide-section.scss";
+// @import "sections/_our-cases-homepage-section.scss";
+// // @import "parts/_upcomming-events-section.scss"; // commented html
+// // @import "parts/_expertise-section.scss"; // deprecated
+// // @import "parts/_onboarding-section.scss"; // commented html
+// // @import "parts/_contact-us-wrapper-page.scss"; // unused page
+// // @import "parts/_users-team-section.scss"; // section in unused page
+// // @import "parts/_dteam-help-section.scss"; // deprecated
+// @import "sections/_dteam-keys-section.scss";
+// @import "sections/_experience-difference-section.scss";
+// // @import "parts/_experience-difference-2-section.scss"; // deprectaed
+// // @import "parts/_latest-cases-section.scss"; // deprecated
+// @import "sections/_testimonials-box.scss";
+// // @import "parts/_csd-section.scss"; // deprecated
+// @import "sections/_stages-section.scss";
+// // @import "parts/_add-value-section.scss";// moved to we-deliver
+// // @import "parts/_business-help-section.scss"; // deprecated
+// // @import "parts/_it-consulting-section.scss"; // deprecated
+// // @import "parts/_latest-tech-section.scss"; // deprecated
+// // @import "parts/_business-domains-section.scss"; // deprecated
+// // @import "parts/_clients-section.scss"; // deprecated
+// @import "pages/_careers-page.scss";
+// // @import "parts/_your-involvement-section.scss"; // deprecated
+// // @import "parts/_price-agency-section.scss"; // deprecated
+// // @import "parts/_complicates-section.scss"; // deprecated
+// @import "pages/_calendar-page.scss";
+// @import "sections/_cta-section.scss";
+// @import "sections/_testimonials-section.scss";
+// // @import "parts/_our-cases-section.scss"; // used in recent projects ???
+// @import "sections/_about-description-section.scss";
+// @import "sections/_about-content-section.scss";
+// @import "sections/_about-we-dream-section.scss";
+// @import "sections/_about-persons-section.scss";
+// // @import "parts/_content-image-section.scss"; // deprecated
+// @import "sections/_cta-2-section.scss";
+// @import "sections/_cta-3-section.scss";
+// // @import "parts/_talents-section.scss"; // deprecated
+// // @import "parts/report/_report-thank-you-section.scss"; // deprecated
+// @import "parts/_report-popup.scss";
+// // @import "parts/report/_technology-page.scss"; // deprecated
+// @import "sections/_improvements-section.scss";
+// @import "sections/_report-form-section.scss";
+// @import "sections/_reveal-section.scss";
+// @import "sections/_you-will-section.scss";
+// @import "sections/_end-credits-section.scss";
+// @import "pages/_calendar-thank-you-page.scss";
+// @import "sections/_book-call-thank-you-section.scss";
+// @import "sections/_report-calendar-section.scss";
+// // @import "sections/_our-expert-section.scss";
+// @import "sections/_our-expert-2-section.scss";
+// @import "pages/_remote-vs-inhouse-page.scss";
+// @import "pages/_logistics-tech-page.scss";
+// @import "pages/_book-call-page.scss";
+// @import "pages/_refer-page.scss";
+// @import "sections/_recent-projects-section.scss";
+// @import "sections/_cases-section.scss";
+// // @import "parts/_awards-section.scss"; // deprecated
+// @import "sections/_proud-section.scss";
+// @import "sections/_our-reports-section.scss";
+// // @import "parts/_recent-projects-2-section.scss"; // deprecated
+// @import "sections/_ticks-list-section.scss";
+// @import "sections/_awards-2-section.scss";
+// @import "sections/_content-small-section.scss";
+// @import "sections/_need-info-section.scss";
+// @import "sections/_quiz-section.scss";
+// @import "pages/_e-gaming-page.scss";
+// @import "pages/_healthcare-page.scss";
+// @import "pages/_saas-page.scss";
+// @import "pages/_logistics-page.scss";
+// @import "pages/_platform-development-page.scss";
+// @import "sections/_technologies-slider-section.scss";
+// @import "pages/_product-design-page.scss";
+// @import "pages/_managed-delivery-page.scss";
+// @import "pages/_devops-services-page.scss";
+// @import "pages/_team-augmentation-page.scss";
+// @import "pages/_fintech-page.scss";
+// @import "sections/_clients-logos-section.scss";
+// @import "pages/_home-page.scss";
+// @import "sections/_expertise-section.scss";
+// @import "sections/_speakers-section.scss";
+// @import "sections/_webinar-countdown-section.scss";
+// @import "sections/_quotation-section.scss";
+// @import "pages/_webinar-page.scss";
+// @import "sections/_speakers-slider-section.scss";
+// @import "sections/_webinar-thank-you-section.scss";

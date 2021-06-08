@@ -1,0 +1,62 @@
+
+@mixin break($point) {
+	@if $point == md {
+		@media  only screen and (min-width: 1920px) { @content; }
+	}
+	@else if $point == sm {
+		@media  only screen and (max-width: 1199px) { @content; }
+	}
+	@else if $point == xs {
+		@media  only screen and (max-width: 767px)  { @content; }
+	}
+}
+
+
+/*
+ * A mixin targeting a specific device width and larger.
+ * These are the available targets: 'xs', 'sm', 'md', 'lg'
+ *
+ * @param {string} $media The target media
+ */
+@mixin respond-from2($media) {
+	@if $media == xs {
+		@media (min-width: 0px)  { @content; }
+	} @else if $media == sm {
+		@media (min-width: 768px) { @content; }
+	} @else if $media == md {
+		@media (min-width: 1200px) { @content; }
+	} @else if $media == lg {
+		@media (min-width: 1920px) { @content; }
+	}
+}
+
+/*
+ * Generates classes for a grid of columns, prefixed by size.
+ * The result will be .col-[size]-[col] E.g. .col-xs-12
+ * The result will be .col-start-[size]-[col] E.g. .col-start-xs-1
+ * The result will be .col-end-[size]-[col] E.g. .col-end-xs-13
+ *
+ * @param {string}	$size			The name of the size target (e.g. xs, sm, md, lg)
+ * @param {int}		$grid-columns	Amount of columns
+ */
+@mixin grid-generator2($size, $grid-columns) {
+	@for $i from 1 through $grid-columns {
+		.col-#{$size}-#{$i} {
+			grid-column: span #{$i};
+		}
+
+		.col-start-#{$size}-#{$i} {
+			grid-column-start: #{$i};
+		}
+	}
+
+	@for $i from 2 through $grid-columns {
+		.col-end-#{$size}-#{$i} {
+			grid-column-end: #{$i};
+		}
+	}
+
+	.col-end-#{$size}-13 {
+		grid-column-end: 13;
+	}
+}

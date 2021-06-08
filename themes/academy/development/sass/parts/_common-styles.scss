@@ -1,0 +1,102 @@
+* {
+	box-sizing: border-box;
+    outline: none;
+}
+
+img {
+	width: auto;
+	max-width: 100%;
+	height: auto;
+}
+
+html {
+	overflow-y: auto;
+    position: relative;
+	min-height: 100%;
+
+    &.menu-opened {
+        @include break(sm) {
+            overflow-y: hidden;
+        }
+    }
+}
+
+body {
+    @extend %base-font-family;
+    font-weight: 400;
+    color: #333333;
+    @extend %base-font-size;
+
+    &.menu-opened {
+        @include break(sm) {
+            overflow-y: hidden;
+        }
+    }
+
+    // popup
+    &.popup-opened {
+        overflow: hidden;
+    
+        &.single-vacancies {
+            overflow: visible;
+        }
+    }
+}
+
+.hidden {
+	display: none !important;
+}
+
+.paragraph {
+    @extend %base-font-size;
+}
+
+strong,
+b,
+.bold {
+    font-weight: 600;
+}
+
+.text-center {
+    text-align: center;
+}
+
+p:empty {
+    display: none;
+}
+
+// .h1 {
+//     @extend %h1;
+// }
+
+// .h2 {
+//     @extend %h2;
+// }
+
+// .h3 {
+//     @extend %h3;
+// }
+
+// .h4 {
+//     @extend %h4;
+// }
+
+
+#main-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.iti__country-name {
+	@extend %base-font-family;
+}
+
+.iti--container {
+	z-index: 5000;
+}
+
+.wpcf7-response-output {
+	display: none!important;
+}

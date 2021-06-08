@@ -1,0 +1,40 @@
+.container {
+    width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include break(sm) {
+        width: 100%;
+        padding-left: 64px;
+        padding-right: 64px;
+    }
+    @include break(xs) {
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+}
+
+.row {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 32px;
+
+    @include break(small) {
+        grid-gap: 24px;
+    }
+}
+
+// Generating grid columns
+@include grid-generator2(xs, 12);
+
+@include respond-from2(sm) {
+	@include grid-generator2(sm, 12);
+}
+
+@include respond-from2(md) {
+	@include grid-generator2(md, 12);
+}
+
+@include respond-from2(lg) {
+	@include grid-generator2(lg, 12);
+}

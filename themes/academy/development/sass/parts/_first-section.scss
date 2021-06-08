@@ -1,0 +1,15 @@
+.first-section {
+    padding-top: 140px;
+    padding-bottom: 80px;
+
+    @include break(small) {
+        padding-top: 85px;
+        padding-bottom: 48px;
+    }
+
+}
+
+.first-section-img {
+    display: block;
+    width: 100%;
+}
