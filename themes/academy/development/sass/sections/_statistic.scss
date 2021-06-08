@@ -1,0 +1,66 @@
+.statistic {
+    padding-bottom: 80px;
+
+    @include break(xs) {
+        padding-bottom: 48px;
+    }
+}
+
+.statistic-items {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.statistic-item {
+    padding: 24px;
+    width: 224px;
+    background-color: #fff;
+    box-shadow: 8px 10px 40px rgba(0, 196, 0, 0.04);
+    border-radius: 10px;
+
+    @include break(sm) {
+        width: calc(50% - 20px);
+        margin-bottom: 40px;
+        display: flex;
+
+        &:last-child {
+            width: 100%;
+            margin-bottom: 0;
+        }
+    }
+
+    @include break(xs) {
+        width: 100%;
+        margin-bottom: 16px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.statistic-icon {
+    display: block;
+}
+
+.statistic-content {
+    margin-top: 24px;
+
+    @include break(sm) {
+        margin-top: 0;
+        margin-left: 24px;
+    }
+}
+
+.statistic-value {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 1.333;
+}
+
+.statistic-description {
+    font-size: 16px;
+    line-height: 1.25;
+    margin-top: 4px;
+}

@@ -2,7 +2,7 @@
     padding-top: 140px;
     padding-bottom: 80px;
 
-    @include break(small) {
+    @include break(xs) {
         padding-top: 85px;
         padding-bottom: 48px;
     }
@@ -12,4 +12,12 @@
 .first-section-img {
     display: block;
     width: 100%;
+
+    @include break(sm) {
+        max-height: 418px;
+    }
+
+    // @include break(xs) {
+    //     max-width: calc(100vw - 64px);
+    // }
 }

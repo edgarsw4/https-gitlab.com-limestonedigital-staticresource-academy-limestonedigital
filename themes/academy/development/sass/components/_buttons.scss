@@ -13,18 +13,20 @@
     transition: color $main-transition-time, background-color $main-transition-time, border-color $main-transition-time;
     font-size: 16px;
     line-height: 1.375;
+    z-index: 1;
 }
 
 .btn-main {
     @extend %btn;
 
     color: #ffffff;
-    // background: linear-gradient(134.27deg, #00C400 5.56%, #06EF39 93.01%);
     overflow: hidden;
 
     &:active,
     &:focus,
     &:hover {
+        color: #ffffff;
+
         &:before {
             opacity: 1;
         }

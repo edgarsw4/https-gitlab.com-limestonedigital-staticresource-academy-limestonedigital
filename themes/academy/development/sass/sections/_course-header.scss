@@ -1,3 +1,61 @@
 .course-header {
+    .row {
+        position: relative;
+    }
 
+    .img-col {
+        @include break(sm) {
+            order: -1;
+        }
+    }
+
+    .description {
+        font-size: 24px;
+        line-height: 1.333;
+        margin-top: 40px;
+
+        @include break(xs) {
+            font-size: 18px;
+            margin-top: 24px;
+        }
+    }
+
+    .btn-main {
+        margin-top: 40px;
+
+        @include break(xs) {
+            margin-top: 24px;
+        }
+    }
+
+    .gradient-1 {
+        background: linear-gradient(134.27deg, rgba(203, 239, 128, 0.6) 5.56%, rgba(0, 196, 0, 0.6) 49.74%, rgba(6, 239, 155, 0.6) 93.01%);
+        opacity: 0.4;
+        filter: blur(250px);
+        border-radius: 332px;
+        width: 486px;
+        height: 486px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+    }
+
+    .gradient-2 {
+        background: linear-gradient(134.27deg, rgba(108, 82, 177, 0.26) 5.56%, rgba(170, 154, 217, 0.26) 49.74%, rgba(129, 103, 198, 0.26) 93.01%);
+        filter: blur(350px);
+        border-radius: 332px;
+        width: 686px;
+        height: 686px;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        transform: translate(50%, 50%);
+        z-index: -1;
+
+        @include break(sm) {
+            display: none;
+        }
+    }
 }

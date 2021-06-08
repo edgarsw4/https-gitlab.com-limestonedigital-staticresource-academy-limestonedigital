@@ -19,7 +19,7 @@ import {
 	// afterloadLoad,
 	// fixedMenu,
 	// headerMenu,
-	// inViewportChecking,
+	inViewportChecking,
 	// initCopyToClipboard,
 	// reportPopupInit,
 	// cookieReminderInit,
@@ -91,7 +91,7 @@ import {
 		// afterloadLoad($);
 		// fixedMenu();
 		// headerMenu();
-		// inViewportChecking($);
+		inViewportChecking($);
 		// initCopyToClipboard();
 		// reportPopupInit($);
 		// cookieReminderInit($);

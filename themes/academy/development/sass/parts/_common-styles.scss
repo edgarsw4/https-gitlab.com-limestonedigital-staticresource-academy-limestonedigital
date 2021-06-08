@@ -41,6 +41,10 @@ body {
             overflow: visible;
         }
     }
+
+    p, div {
+        @extend %base-font-size;
+    }
 }
 
 .hidden {
@@ -65,17 +69,30 @@ p:empty {
     display: none;
 }
 
-// .h1 {
-//     @extend %h1;
-// }
+.h1 {
+    @extend %h1;
+}
 
-// .h2 {
-//     @extend %h2;
-// }
+a {
+    color: #00C400;
 
-// .h3 {
-//     @extend %h3;
-// }
+    &:hover {
+        color: #00C400;
+    }
+}
+
+.title a,
+.description a {
+    @extend %link-reverse-line;
+}
+
+.h2 {
+    @extend %h2;
+}
+
+.h3 {
+    @extend %h3;
+}
 
 // .h4 {
 //     @extend %h4;
@@ -86,6 +103,19 @@ p:empty {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
+    position: relative;
+
+    &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #FAFBFA;
+        z-index: -1;
+    }
 }
 
 

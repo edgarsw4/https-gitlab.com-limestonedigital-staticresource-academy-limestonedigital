@@ -19,8 +19,8 @@
     grid-template-columns: repeat(12, 1fr);
     grid-gap: 32px;
 
-    @include break(small) {
-        grid-gap: 24px;
+    @include break(xs) {
+        grid-gap: 20px;
     }
 }
 

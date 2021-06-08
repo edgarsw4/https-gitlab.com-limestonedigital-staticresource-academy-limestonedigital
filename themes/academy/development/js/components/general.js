@@ -470,9 +470,7 @@ export function headerMenu() {
 
 export function inViewportChecking($) {
     const STAGES_ITEMS             = document.querySelectorAll(
-        '.stages-holder .stage,'+
-        '.after-report-section .item,' +
-        '.you-will-section .you-will-item'
+        '.stages-holder .stage'
     );
 
     $(window).on('scroll', () => {

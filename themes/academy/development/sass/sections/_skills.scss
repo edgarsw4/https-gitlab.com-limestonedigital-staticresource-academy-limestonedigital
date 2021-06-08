@@ -1,0 +1,85 @@
+.skills {
+
+    .skills-content {
+        text-align: center;
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 80px 110px;
+        position: relative;
+
+        @include break(sm) {
+            padding: 48px 32px;
+        }
+
+        @include break(xs) {
+            text-align: left;
+            padding: 24px;
+        }
+    }
+
+    .circle-1 {
+        position: absolute;
+        width: 197px;
+        height: 197px;
+        border-radius: 50%;
+        top: 0;
+        left: 0;
+        transform: translate(-50%, -37%);
+        background: linear-gradient(135deg, rgba(203,239,128,.3) 0%, rgba(0,196,0,.3) 50%, rgba(6,239,155,.3) 100%);
+        z-index: -1;
+
+        &:after {
+            content: '';
+            width: 80%;
+            height: 80%;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #FAFBFA;
+        }
+
+        @include break(sm) {
+            display: none;
+        }
+    }
+
+    .circle-2 {
+        position: absolute;
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        bottom: 0;
+        right: 0;
+        transform: translate(50%, 50%);
+        background: rgba(0, 196, 0, 0.3);
+        z-index: -1;
+
+        @include break(sm) {
+            display: none;
+        }
+    }
+
+    .title {
+        padding-bottom: 24px;
+        margin-bottom: 24px;
+        position: relative;
+
+        &:after {
+            content: '';
+            background: #00C400;
+            height: 4px;
+            width: 80px;
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+
+            @include break(xs) {
+                left: 0;
+                transform: translateX(0);
+            }
+        }
+    }
+}

@@ -12,4 +12,10 @@ if (empty($all_post_meta) || empty($options)) {
 
 include( locate_template('sections/course-header.php', false, false ));
 
+include( locate_template('sections/statistic.php', false, false ));
+
+include( locate_template('sections/skills.php', false, false ));
+
+include( locate_template('sections/learning.php', false, false ));
+
 get_footer();

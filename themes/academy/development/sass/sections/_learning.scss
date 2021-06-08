@@ -1,0 +1,378 @@
+.learning {
+    padding: 120px 0 80px;
+
+    @include break(sm) {
+        padding: 88px 0 128px;
+    }
+
+    @include break(xs) {
+        padding: 48px 0 24px;
+    }
+
+    .container {
+        position: relative;
+    }
+
+    .circle-3 {
+        position: absolute;
+        width: 451px;
+        height: 451px;
+        border-radius: 50%;
+        top: 0;
+        right: 0;
+        transform: translate(50%, 0);
+        background: linear-gradient(135deg, rgba(203,239,128,.6) 0%, rgba(0,196,0,.6) 50%, rgba(6,239,155,.6) 100%);
+        z-index: -1;
+
+        &:after {
+            content: '';
+            width: 80%;
+            height: 80%;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #FAFBFA;
+        }
+
+        @include break(sm) {
+            display: none;
+        }
+    }
+
+    .title {
+        text-align: center;
+
+        @include break(xs) {
+            text-align: left;
+        }
+    }
+}
+
+.stages-holder {
+	position: relative;
+	display: grid;
+	grid-auto-rows: 1fr;
+    margin-top: 32px;
+
+	.stage {
+		position: relative;
+		display: flex;
+		align-items: center;
+		padding-left: 8.5%;
+		padding-right: 25%;
+		padding-top: 48px;
+		padding-bottom: 48px;
+		height: 288px;
+		
+
+		@include break(md) {
+			height: 264px;
+		}
+
+		@include break(sm) {
+			height: 244px;
+			padding-left: 12.5%;
+            padding-right: 0;
+		}
+
+		@include break(xs) {
+			padding-left: 16px;
+			padding-right: 16px;
+			padding-top: 32px;
+			padding-bottom: 32px;
+			height: auto;
+		}
+
+		&:before {
+			position: absolute;
+			left: 0;
+			top: 0;
+			content: '';
+			width: 50%;
+			height: calc(100% - 1px);
+			border-bottom: 1px solid #1ACA1A;
+			border-top: 1px solid #1ACA1A;
+			border-left: 1px solid #1ACA1A;
+			border-top-left-radius: 80px;
+			border-bottom-left-radius: 80px;
+
+			@include break(xs) {
+				border-top-left-radius: 26px;
+				border-bottom-left-radius: 26px;
+			}
+		}
+
+		&:nth-child(even) {
+			padding-left: 25%;
+			padding-right: 8.5%;
+
+            @include break(sm) {
+                padding-left: 0;
+            }
+
+			@include break(xs) {
+				padding-left: 16px;
+				padding-right: 16px;
+			}
+
+			&:before {
+				left: auto;
+				right: 0;
+				border-left: none;
+				border-right: 1px solid #1ACA1A;
+				border-top-left-radius: 0;
+				border-bottom-left-radius: 0;
+				border-top-right-radius: 80px;
+				border-bottom-right-radius: 80px;
+	
+				@include break(xs) {
+					border-top-right-radius: 26px;
+					border-bottom-right-radius: 26px;
+				}
+			}
+
+			&:last-child {
+				&:after {
+					left: auto;
+					right: 0;
+				}
+
+				.stage-line-hover {
+					display: block;
+
+					@include break(xs) {
+						display: none;
+					}
+				}
+			}
+
+			.stage-point {
+				left: auto;
+				right: 0;
+				transform: translate3d(50%, -50%, 0);
+
+				@include break(xs) {
+					right: 50%;
+					top: 0;
+				}
+			}
+		}
+
+		&:first-child {
+			&:before {
+				border-top: none;
+                height: 100%;
+
+				@include break(xs) {
+					border-top: 1px solid #1ACA1A;
+				}
+			}
+			
+			&:after {
+				content: '';
+				height: 50%;
+				width: 80px;
+				position: absolute;
+				left: -1px;
+				top: 0;
+				background-color: #FAFBFA;
+
+				@include break(xs) {
+					display: none;
+				}
+			}
+			.stage-line-hover {
+				display: block;
+
+				@include break(xs) {
+					display: none;
+				}
+			}
+		}
+
+		&:last-child {
+			border-bottom: none;
+
+			&:nth-child(even) {
+				&:before {
+					border-bottom: none;
+
+					@include break(xs) {
+						border-bottom: 1px solid #1ACA1A;
+					}
+				}
+			}
+
+			&:nth-child(odd) {
+				&:before {
+					border-bottom: none;
+
+					@include break(xs) {
+						border-bottom: 1px solid #1ACA1A;
+					}
+				}
+			}
+
+			&:after {
+				content: '';
+				height: 51%;
+				width: 80px;
+				position: absolute;
+				left: -1px;
+				top: 50%;
+				background-color: #FAFBFA;
+
+				@include break(xs) {
+					display: none;
+				}
+			}
+
+			&:nth-child(odd):before {
+				margin-top: 0;
+			}
+
+			.stage-line-hover {
+				display: block;
+				top: auto;
+				bottom: 0;
+
+				@include break(xs) {
+					display: none;
+					top: auto;
+					bottom: 0;
+					width: calc(44.5% + 4px);
+				}
+			}
+		}
+
+		&.in-viewport {
+			.stage-image,
+			.h3,
+			.description {
+				transform: translateY(0);
+				opacity: 1;
+			}
+		}
+	}
+
+	.stage-figure {
+		width: 192px;
+		margin-right: 32px;
+
+		@include break(md) {
+			width: 152px;
+		}
+
+		@include break(sm) {
+			display: none;
+		}
+	}
+
+	.stage-image {
+		transition: transform 1s ease,opacity 1s ease;
+		transform: translateY(40px);
+		opacity: 0;
+
+		@include break(xs) {
+			transform: translateY(0);
+			opacity: 1;
+		}
+	}
+
+	.stage-info {
+		max-width: calc(100% - 224px);
+
+		@include break(md) {
+			max-width: calc(100% - 184px);
+		}
+
+		@include break(sm) {
+			max-width: none;
+		}
+
+		.h3 {
+			transition: transform 1s ease,opacity 1s ease;
+			transform: translateY(40px);
+			opacity: 0;
+
+			@include break(xs) {
+				transform: translateY(0);
+				opacity: 1;
+			}
+		}
+
+		.description {
+			transition: transform 1s ease,opacity 1s ease;
+			transform: translateY(40px);
+			opacity: 0;
+			z-index: 1;
+			position: relative;
+            margin-top: 24px;
+
+			@include break(xs) {
+				margin-top: 8px;
+				transform: translateY(0);
+				opacity: 1;
+			}
+		}
+	}
+
+	.stage-point {
+		position: absolute;
+		left: 0;
+		top: 50%;
+		width: 32px;
+		height: 32px;
+		background-color: #fff;
+		border-radius: 50%;
+		border: 1px solid #1ACA1A;
+		transform: translate3d(-50%, -50%, 0);
+		z-index: 1;
+
+		@include break(xs) {
+			left: 50%;
+			top: 0;
+		}
+
+		&:after {
+			content: '';
+			width: 16px;
+			height: 16px;
+			border-radius: 50%;
+			background-color: #1ACA1A;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate3d(-50%, -50%, 0);
+		}
+	}
+
+	.stage-point-final {
+		display: none;
+
+		@include break(xs) {
+			display: block;
+			top: auto;
+			bottom: 0;
+			transform: translate3d(-50%, 50%, 0);
+		}
+	}
+
+
+	.stage-line-hover {
+		display: none;
+
+		@include break(xs) {
+			position: absolute;
+			height: auto;
+			padding-top: 14%;
+			width: calc(44.5% + 6px);
+			top: 0;
+			right: -2px;
+			background-color: #FAFBFA;
+			z-index: 1;
+		}
+	}
+}
