@@ -1,0 +1,38 @@
+.teacher {
+    .row {
+        background-color: #fff;
+        padding-top: 80px;
+        padding-bottom: 80px;
+
+        @include break(sm) {
+            padding: 48px;
+        }
+    
+        @include break(xs) {
+            padding: 24px;
+        }
+    }
+    
+    .teacher-figure {
+        text-align: center;
+
+        @include break(sm) {
+            text-align: left;
+        }
+    }
+
+    .content-col {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .subtitle {
+        margin-top: 32px;
+    }
+
+    .description {
+        margin-top: 24px;
+    }
+}

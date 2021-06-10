@@ -1,0 +1,12 @@
+.technologies {
+    padding-top: 80px;
+    padding-bottom: 40px;
+
+    @include break(xs) {
+        padding-bottom: 32px;
+    }
+
+    .technology-figure {
+        text-align: center;
+    }
+}

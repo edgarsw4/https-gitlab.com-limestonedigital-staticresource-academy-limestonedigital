@@ -1,0 +1,119 @@
+.program {
+    @include break(xs) {
+        margin-top: 24px;
+    }
+
+    .row {
+        padding-top: 80px;
+        padding-bottom: 80px;
+        background-color: #fff;
+        position: relative;
+
+        @include break(sm) {
+            padding: 48px 32px;
+            grid-gap: 0;
+        }
+
+        @include break(xs) {
+            padding: 24px;
+        }
+    }
+
+    .gradient-3 {
+        position: absolute;
+        width: 902px;
+        height: 902px;
+        left: 0;
+        top: 0;
+        background: linear-gradient(134.27deg, rgba(203, 239, 128, 0.6) 5.56%, rgba(0, 196, 0, 0.6) 49.74%, rgba(6, 239, 155, 0.6) 93.01%);
+        opacity: 0.15;
+        filter: blur(400px);
+        border-radius: 332px;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+    }
+
+    .gradient-4 {
+        position: absolute;
+        width: 902px;
+        height: 902px;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(134.27deg, rgba(108, 82, 177, 0.26) 5.56%, rgba(170, 154, 217, 0.26) 49.74%, rgba(129, 103, 198, 0.26) 93.01%);
+        opacity: 0.65;
+        filter: blur(400px);
+        border-radius: 332px;
+        transform: translate(50%, 50%);
+        z-index: -1;
+    }
+
+    .module {
+        margin-top: 80px;
+
+        @include break(sm) {
+            margin-top: 48px;
+        }
+
+        &:first-child {
+            margin-top: 0;
+
+            @include break(sm) {
+                margin-top: 48px;
+            }
+        }
+    }
+
+    .module-title {
+        display: inline;
+        position: relative;
+        z-index: 0;
+
+        &:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 8px;
+            background-color: #00C400;
+            z-index: -1;
+        }
+    }
+
+    .module-subtitle {
+        margin-top: 24px;
+
+        @include break(xs) {
+            margin-top: 16px;
+        }
+    }
+
+    .module-items {
+        margin-top: 24px;
+
+        @include break(xs) {
+            margin-top: 16px;
+        }
+    }
+
+    .module-item {
+        margin-top: 12px;
+        padding-left: 32px;
+        position: relative;
+
+        @include break(xs) {
+            padding-left: 24px;
+        }
+
+        &:before {
+            content: '';
+            position: absolute;
+            left: 6px;
+            top: 6px;
+            height: 8px;
+            width: 8px;
+            background-color: #333333;
+            border-radius: 50%;
+        }
+    }
+}

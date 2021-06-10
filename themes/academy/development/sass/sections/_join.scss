@@ -1,0 +1,25 @@
+.join {
+    margin-top: 160px;
+    margin-bottom: 80px;
+
+    @include break(sm) {
+        margin-top: 144px;
+    }
+
+    @include break(xs) {
+        margin-top: 96px;
+        margin-bottom: 48px;
+    }
+
+    .title {
+
+    }
+
+    .join-form-wrapper {
+        height: 10px;
+
+        background-color: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+}

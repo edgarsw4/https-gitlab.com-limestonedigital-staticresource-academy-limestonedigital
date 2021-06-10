@@ -70,7 +70,7 @@
 	line-height: 1.25;
 
     @include break(xs) {
-        font-size: 32px;
+        font-size: 24px;
     }
 }
 
@@ -86,21 +86,15 @@
 }
 
 
-// %h4 {
-//     font-weight: 600;
-//     font-size: 28px;
-//     line-height: 36px;
+%h4 {
+	font-weight: bold;
+	font-size: 24px;
+	line-height: 1.333;
 
-//     @include break(large1920) {
-//         font-size: 24px;
-//         line-height: 32px;
-//     }
-
-//     @include break(small) {
-//         font-size: 18px;
-//         line-height: 24px;
-//     }
-// }
+	@include break(xs) {
+        font-size: 18px;
+    }
+}
 
 // %go-to-next-section {
 // 	@extend %label-font-size;

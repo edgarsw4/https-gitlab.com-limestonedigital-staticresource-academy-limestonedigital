@@ -1,0 +1,42 @@
+.certificate {
+    background-color: #fff;
+    padding-top: 80px;
+    padding-bottom: 80px;
+
+    @include break(xs) {
+        padding-top: 48px;
+        padding-bottom: 48px;
+    }
+
+    .content-col {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .img-col {
+        @include break(sm) {
+            order: -1;
+        }
+    }
+
+    .description {
+        font-size: 24px;
+        line-height: 1.333;
+        margin-top: 40px;
+
+        @include break(xs) {
+            font-size: 18px;
+            margin-top: 24px;
+        }
+    }
+
+    .btn-main {
+        margin-top: 40px;
+
+        @include break(xs) {
+            margin-top: 24px;
+        }
+    }
+}

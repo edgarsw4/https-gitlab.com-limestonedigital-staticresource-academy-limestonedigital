@@ -18,4 +18,18 @@ include( locate_template('sections/skills.php', false, false ));
 
 include( locate_template('sections/learning.php', false, false ));
 
+include( locate_template('sections/program.php', false, false ));
+
+include( locate_template('sections/technologies.php', false, false ));
+
+include( locate_template('sections/certificate.php', false, false ));
+
+include( locate_template('sections/about.php', false, false ));
+
+include( locate_template('sections/teacher.php', false, false ));
+
+include( locate_template('sections/join.php', false, false ));
+
+include( locate_template('sections/faq.php', false, false ));
+
 get_footer();

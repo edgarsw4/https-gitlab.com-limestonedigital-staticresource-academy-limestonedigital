@@ -25,7 +25,7 @@ import {
 	// cookieReminderInit,
 	// countdown,
 } from './components/general.js';
-// import {
+import {
 // 	phone,
 // 	countryPhone,
 // 	datepicker,
@@ -45,10 +45,10 @@ import {
 // 	careersTabsInit,
 // 	testimonialsInfinityScrollInit,
 // 	blogInfinityScrollInit,
-// 	ticksListAccordion,
+	ticksListAccordion,
 // 	quizForm,
 // 	expertiseHover,
-// } from './components/sections.js';
+} from './components/sections.js';
 // import {carouselsInit} from './components/carousels.js';
 
 // // Init Closest polyfill method
@@ -107,7 +107,7 @@ import {
 		// careersTabsInit($);
 		// testimonialsInfinityScrollInit($);
 		// blogInfinityScrollInit($);
-		// ticksListAccordion($);
+		ticksListAccordion($);
 		// quizForm($);
 		// expertiseHover($);
 		// countdown($);
