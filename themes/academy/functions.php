@@ -41,9 +41,9 @@ function px_site_scripts() {
     wp_register_script( 'jquery', get_template_directory_uri() . "/build/js/jquery-3.6.0.min.js", array(), '3.6.0' );
 
     // wp_enqueue_script('jquery', false, array(), false, false);
-    wp_enqueue_script( 'libs_js', get_template_directory_uri() . '/build/js/libs.js?v='.get_file_modify('/build/js/libs.js'), array('jquery'), null, true );
+    // wp_enqueue_script( 'libs_js', get_template_directory_uri() . '/build/js/libs.js?v='.get_file_modify('/build/js/libs.js'), array('jquery'), null, true );
 
-    wp_enqueue_script( 'customization_js', get_template_directory_uri() . '/build/js/customization.js?v=1&d='.get_file_modify('/build/js/customization.js'), array('jquery', 'libs_js'), null, true );
+    wp_enqueue_script( 'customization_js', get_template_directory_uri() . '/build/js/customization.js?v=1&d='.get_file_modify('/build/js/customization.js'), array('jquery'), null, true );
 
     // static variables
     $vars = array(
@@ -409,4 +409,17 @@ if( function_exists('acf_add_options_page') ) {
         'capability'	=> 'edit_posts',
         'redirect'		=> false
     ));
+}
+
+add_action( 'wp_head', 'add_head_code' );
+function add_head_code(){
+    global $options;
+
+	if (!isset($options) || empty($options)) {
+        $options = get_fields('options');
+    }
+
+    if ($options['gtm_code']) {
+        echo $options['gtm_code'];
+    }
 }

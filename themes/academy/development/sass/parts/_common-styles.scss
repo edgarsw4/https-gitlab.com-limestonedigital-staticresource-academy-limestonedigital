@@ -33,15 +33,6 @@ body {
         }
     }
 
-    // popup
-    &.popup-opened {
-        overflow: hidden;
-    
-        &.single-vacancies {
-            overflow: visible;
-        }
-    }
-
     p, div {
         @extend %base-font-size;
     }
@@ -116,17 +107,4 @@ a {
         background-color: #FAFBFA;
         z-index: -1;
     }
-}
-
-
-.iti__country-name {
-	@extend %base-font-family;
-}
-
-.iti--container {
-	z-index: 5000;
-}
-
-.wpcf7-response-output {
-	display: none!important;
 }

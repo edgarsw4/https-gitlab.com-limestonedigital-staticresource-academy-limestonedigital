@@ -2,7 +2,7 @@ const gulp = require('gulp');
 
 const sass       = require('gulp-sass');
 const sourcemaps = require('gulp-sourcemaps');
-const babel      = require("gulp-babel");
+const babel      = require('gulp-babel');
 const eslint     = require('gulp-eslint');
 const uglify     = require('gulp-uglify');
 const concat     = require('gulp-concat');
@@ -15,12 +15,12 @@ sass.compiler = require('node-sass');
 const paths = {
     styles: {
         src: 'sass/**/*.scss',
-        dest: '../build/styles/'
+        dest: '../build/styles/',
     },
     scripts: {
         src: 'js/**/*.js',
-        dest: '../build/js/'
-    }
+        dest: '../build/js/',
+    },
 };
 
 function js_lint(){
@@ -42,7 +42,7 @@ function js_compile(){
             // plugins: [nodeResolve()],
         }))
         .pipe(babel({
-            presets: ['@babel/env']
+            presets: ['@babel/env'],
         }))
         .pipe(uglify())
         .pipe(sourcemaps.write('.'))
@@ -53,16 +53,7 @@ function js_compile(){
 
 function combile_libs_js(){
 	return gulp.src([
-			// 'js/jquery.easing-1.3.pack.js',
-			// 'js/jquery.fancybox.min.js',
-			// 'js/js.cookie.js',
-			// 'js/lazy.js',
-			// 'js/jquery.mmenu.min.all.js',
-			// 'js/formValidation.min.js',
-			// 'js/framework/bootstrap.min.js',
-            // // new files
-            'js/slick.min.js',
-            // 'js/highlight.min.js'
+            'js/intlTelInput.min.js',
 		])
 		.pipe(concat('libs.js'))
 		.pipe(gulp.dest(paths.scripts.dest))

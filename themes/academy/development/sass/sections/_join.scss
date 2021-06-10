@@ -11,15 +11,165 @@
         margin-bottom: 48px;
     }
 
+    .join-form-wrapper {
+        background-color: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        padding: 48px;
+
+        @include break(sm) {
+            padding: 32px;
+        }
+
+        @include break(xs) {
+            padding: 24px;
+        }
+    }
+
     .title {
 
     }
 
-    .join-form-wrapper {
-        height: 10px;
+    .wpcf7 {
+        margin-top: 24px;
 
-        background-color: #fff;
-        border-radius: 10px;
-        overflow: hidden;
+        @include break(xs) {
+            padding: 16px;
+        }
+    }
+
+    .wpcf7-form {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .input-holder {
+        position: relative;
+        width: calc(50% - 12px);
+        margin-bottom: 24px;
+
+        @include break(xs) {
+            width: 100%;
+            margin-bottom: 16px;
+        }
+
+        &.input-holder-textarea {
+            width: 100%;
+        }
+    }
+    
+    .wpcf7-textarea {
+        padding: 20px;
+        height: 120px;
+    }
+
+    .form-checkbox {
+        margin-top: 16px;
+        margin-bottom: 48px;
+
+        @include break(xs) {
+            margin-top: 8px;
+            margin-bottom: 16px;
+        }
+    }
+
+
+    .checkbox {
+        display: block;
+        margin-top: 16px;
+        margin-bottom: 8px;
+
+        @include break(xs) {
+            margin-top: 8px;
+        }
+
+        .wpcf7-list-item {
+            margin: 0;
+        }
+
+        input {
+            @extend %checkbox-input;
+        }
+
+        .wpcf7-list-item-label {
+            @extend %checkbox-label-unchecked;
+        }
+
+        input:checked + .wpcf7-list-item-label:after {
+            @extend %checkbox-label-checked;
+        }
+    }
+
+    .action-buttons {
+        width: 100%;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        margin-top: 48px;
+
+        @include break(xs) {
+            flex-direction: column;
+            margin-top: 24px;
+        }
+    }
+
+    .btn-main {
+        @include break(xs) {
+            width: 100%;
+        }
+    }
+
+    .submit-wrapper {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        @include break(xs) {
+            width: 100%;
+        }
+    }
+
+    div.wpcf7 .ajax-loader {
+        display: none;
+        background-image: none;
+        margin: 4px 0 0 0;
+        position: absolute;
+        z-index: 1;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+
+        @include break(xs) {
+            position: relative;
+            transform: translateX(0);
+            top: 0;
+            left: 0;
+        }
+
+        &.is-active {
+            display: block;
+            &:before {
+                content: '';
+                width: 16px;
+                height: 16px;
+                position: absolute;
+                border-radius: 50%;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 0;
+                background-color: #00C400;
+                background-image: url(data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJsb2FkZXItMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiCiAgICAgd2lkdGg9IjE2cHgiIGhlaWdodD0iMTZweCIgdmlld0JveD0iMCAwIDUwIDUwIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MCA1MDsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgogIDxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik00My45MzUsMjUuMTQ1YzAtMTAuMzE4LTguMzY0LTE4LjY4My0xOC42ODMtMTguNjgzYy0xMC4zMTgsMC0xOC42ODMsOC4zNjUtMTguNjgzLDE4LjY4M2g0LjA2OGMwLTguMDcxLDYuNTQzLTE0LjYxNSwxNC42MTUtMTQuNjE1YzguMDcyLDAsMTQuNjE1LDYuNTQzLDE0LjYxNSwxNC42MTVINDMuOTM1eiI+CiAgICA8YW5pbWF0ZVRyYW5zZm9ybSBhdHRyaWJ1dGVUeXBlPSJ4bWwiCiAgICAgIGF0dHJpYnV0ZU5hbWU9InRyYW5zZm9ybSIKICAgICAgdHlwZT0icm90YXRlIgogICAgICBmcm9tPSIwIDI1IDI1IgogICAgICB0bz0iMzYwIDI1IDI1IgogICAgICBkdXI9IjAuNnMiCiAgICAgIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIi8+CiAgICA8L3BhdGg+CiAgPC9zdmc+Cg==);
+            }
+        }
+    }
+
+    .wpcf7-response-output {
+        margin-left: auto;
+        margin-right: auto;
     }
 }

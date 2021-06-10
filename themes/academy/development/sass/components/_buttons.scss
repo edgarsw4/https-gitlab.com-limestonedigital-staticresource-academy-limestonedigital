@@ -64,11 +64,13 @@
 
     button,
     input[type="submit"] {
-
         @extend %base-font-family;
         font-size: 16px;
         line-height: 1.375;
         color: #ffffff;
+        background-color: transparent;
+        border: none;
+        text-transform: uppercase;
     }
 }
 

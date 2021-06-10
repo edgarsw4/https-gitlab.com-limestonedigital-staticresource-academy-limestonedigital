@@ -16,8 +16,4 @@
     @include break(sm) {
         max-height: 418px;
     }
-
-    // @include break(xs) {
-    //     max-width: calc(100vw - 64px);
-    // }
 }
