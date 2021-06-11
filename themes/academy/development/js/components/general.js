@@ -1,4 +1,4 @@
-// import Popup from '../modules/popup-window.js';
+import Popup from '../modules/popup-window.js';
 import {
     isInViewport,
     // copyToClipboard,
@@ -60,6 +60,22 @@ export function burger() {
       $html.addClass('menu-opened');
     }
   });
+}
+
+export function clickOnHash($) {
+    $('a').click(function(event) {
+        const link = $(event.target).attr('href');
+        const hash = link.substr(link.indexOf('#'));
+        const $hash = $(hash);
+
+        if ($hash[0]) {
+            const offset = $hash.offset().top - $('#site-header').height();
+
+			$('html, body').animate({
+				scrollTop: offset,
+			}, 1500, 'swing');
+		}
+    });
 }
 
 // export function preloadLazyImages($, md) {
@@ -136,19 +152,19 @@ export function burger() {
 // 	});
 // }
 
-// export function scrollToURLHash($) {
-//     if(window.location.hash) {
-// 		const $hash = $(window.location.hash);
+export function scrollToURLHash($) {
+    if(window.location.hash) {
+		const $hash = $(window.location.hash);
 
-// 		if ($hash[0]) {
-//             const offset = $hash.offset().top - $('#site-header').height();
+		if ($hash[0]) {
+            const offset = $hash.offset().top - $('#site-header').height();
 
-// 			$('html, body').animate({
-// 				scrollTop: offset,
-// 			}, 1500, 'swing');
-// 		}
-// 	}
-// }
+			$('html, body').animate({
+				scrollTop: offset,
+			}, 1500, 'swing');
+		}
+	}
+}
 
 // /**
 //  * When the openFullscreen()
@@ -226,12 +242,12 @@ export function burger() {
 //     });
 // }
 
-// export function initPopups() {
-//     // Init popups Windows
-//     const popup_windows = new Popup();
-//     popup_windows.init();
-//     window.popup_windows = popup_windows;
-// }
+export function initPopups() {
+    // Init popups Windows
+    const popup_windows = new Popup();
+    popup_windows.init();
+    window.popup_windows = popup_windows;
+}
 
 // export function scrollToButton($) {
 //     const SCROLL_TO_ELEMENT_BTN = document.querySelectorAll('.js-anchor-section');
@@ -537,29 +553,29 @@ export function inViewportChecking($) {
 //     }
 // }
 
-// export function cookieReminderInit($) {
-//     const CLOSE_COOKIE_REMINDER    = document.querySelectorAll('.js-close-reminder');
-//     const COOKIE_POLICY_BOX        = document.querySelector('.js-cookie-policy-box');
+export function cookieReminderInit($) {
+    const CLOSE_COOKIE_REMINDER    = document.querySelectorAll('.js-close-reminder');
+    const COOKIE_POLICY_BOX        = document.querySelector('.js-cookie-policy-box');
 
-//     const cookie_policy_check = Cookies.get('cookie_policy');
+    const cookie_policy_check = Cookies.get('cookie_policy');
 
-//     if ( cookie_policy_check !== 'viewed' ) {
-//         setTimeout( () => {
-//             (COOKIE_POLICY_BOX) && COOKIE_POLICY_BOX.classList.add('opened');
-//         }, 2000 );
-//     }
+    if ( cookie_policy_check !== 'viewed' ) {
+        setTimeout( () => {
+            (COOKIE_POLICY_BOX) && COOKIE_POLICY_BOX.classList.add('opened');
+        }, 2000 );
+    }
 
-//     (CLOSE_COOKIE_REMINDER) && CLOSE_COOKIE_REMINDER.forEach( item => {
+    (CLOSE_COOKIE_REMINDER) && CLOSE_COOKIE_REMINDER.forEach( item => {
 
-//         item.addEventListener('click', (event) => {
-//             event.preventDefault();
+        item.addEventListener('click', (event) => {
+            event.preventDefault();
 
-//             (COOKIE_POLICY_BOX) && COOKIE_POLICY_BOX.classList.remove('opened');
-//             Cookies.set('cookie_policy', 'viewed', {expires: 40});
-//         });
+            (COOKIE_POLICY_BOX) && COOKIE_POLICY_BOX.classList.remove('opened');
+            Cookies.set('cookie_policy', 'viewed', {expires: 40});
+        });
 
-//     });
-// }
+    });
+}
 
 // function updateCountdown($countdown, time) {
 //     const days = Math.floor(time/86400);

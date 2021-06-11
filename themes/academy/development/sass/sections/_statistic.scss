@@ -1,5 +1,6 @@
 .statistic {
     padding-bottom: 80px;
+    overflow: hidden;
 
     @include break(xs) {
         padding-bottom: 48px;

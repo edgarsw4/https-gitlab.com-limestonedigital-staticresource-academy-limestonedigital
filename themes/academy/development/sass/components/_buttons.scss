@@ -64,6 +64,7 @@
 
     button,
     input[type="submit"] {
+        cursor: pointer;
         @extend %base-font-family;
         font-size: 16px;
         line-height: 1.375;

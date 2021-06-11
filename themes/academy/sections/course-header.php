@@ -13,7 +13,7 @@ $course_header_image = get_field('course_header_image');
             <div class="col-xs-12 col-md-7">
                 <h1 class="h1 title"><?php echo $course_header_title; ?></h1>
                 <p class="description"><?php echo $course_header_description; ?></p>
-                <a class="btn-main" href="<?php echo $course_header_button_link; ?>"><?php echo $course_header_button_text; ?></a>
+                <a class="btn-main js-open-popup-activator" href="<?php echo $course_header_button_link; ?>"><?php echo $course_header_button_text; ?></a>
             </div>
             <div class="col-xs-12 col-md-5 img-col">
                 <figure class="first-section-figure">

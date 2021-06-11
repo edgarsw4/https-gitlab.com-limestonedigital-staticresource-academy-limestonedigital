@@ -1,6 +1,7 @@
 .join {
     margin-top: 160px;
     margin-bottom: 80px;
+    overflow: hidden;
 
     @include break(sm) {
         margin-top: 144px;
@@ -10,24 +11,20 @@
         margin-top: 96px;
         margin-bottom: 48px;
     }
+}
 
-    .join-form-wrapper {
-        background-color: #fff;
-        border-radius: 10px;
-        overflow: hidden;
-        padding: 48px;
+.join-form-wrapper {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 48px;
 
-        @include break(sm) {
-            padding: 32px;
-        }
-
-        @include break(xs) {
-            padding: 24px;
-        }
+    @include break(sm) {
+        padding: 32px;
     }
 
-    .title {
-
+    @include break(xs) {
+        padding: 24px;
     }
 
     .wpcf7 {

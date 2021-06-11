@@ -1,4 +1,6 @@
 .program {
+    overflow: hidden;
+
     @include break(xs) {
         margin-top: 24px;
     }

@@ -19,6 +19,15 @@ html {
             overflow-y: hidden;
         }
     }
+
+    // for html on fixed menu opening
+    &.popup-opened {
+    	overflow: hidden;
+
+    	body {
+    		overflow: hidden;
+    	}
+    }
 }
 
 body {
@@ -72,6 +81,9 @@ a {
     }
 }
 
+#cookie-policy-box a,
+.tick-description a,
+.about-item a,
 .title a,
 .description a {
     @extend %link-reverse-line;
@@ -94,7 +106,7 @@ a {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
+    // overflow: hidden;
     position: relative;
 
     &:before {
@@ -108,3 +120,7 @@ a {
         z-index: -1;
     }
 }
+
+// .wpcf7-response-output {
+// 	display: none!important;
+// }

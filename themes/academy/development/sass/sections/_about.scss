@@ -1,6 +1,7 @@
 .about {
     padding-top: 80px;
     padding-bottom: 160px;
+    overflow: hidden;
 
     @include break(sm) {
         padding-bottom: 144px;

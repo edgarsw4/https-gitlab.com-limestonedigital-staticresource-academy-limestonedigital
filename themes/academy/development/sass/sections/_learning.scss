@@ -1,5 +1,6 @@
 .learning {
     padding: 120px 0 80px;
+	overflow: hidden;
 
     @include break(sm) {
         padding: 88px 0 128px;

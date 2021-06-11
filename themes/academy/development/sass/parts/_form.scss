@@ -113,3 +113,7 @@ div.wrap-submit {
     -moz-appearance: none;
     appearance: none;
 }
+
+option[disabled] {
+    display: none;
+}

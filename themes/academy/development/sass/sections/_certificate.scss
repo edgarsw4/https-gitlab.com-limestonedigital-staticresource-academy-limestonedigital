@@ -2,6 +2,7 @@
     background-color: #fff;
     padding-top: 80px;
     padding-bottom: 80px;
+    overflow: hidden;
 
     @include break(xs) {
         padding-top: 48px;

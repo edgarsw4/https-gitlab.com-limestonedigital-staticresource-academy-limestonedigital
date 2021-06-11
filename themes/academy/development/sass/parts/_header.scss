@@ -45,6 +45,8 @@
 	}
 
 	.logo {
+        margin-right: 16px;
+    
 		.cls-2 {
 			fill: #333333;
 		}
@@ -70,8 +72,20 @@
 		box-shadow: 0 2px 17px -4px rgba(0,0,0,0.2);
 	}
 
+    .menu {
+        display: flex;
+
+        @include break(sm) {
+			flex-direction: column;
+		}
+    }
+
 	.menu-item {
 		margin-right: 40px;
+
+        &:first-child {
+            display: none;
+        }
 
 		&:last-child {
 			margin-right: 0;
@@ -111,15 +125,11 @@
 	.header-buttons {
 		display: flex;
 		align-items: center;
+        margin-left: 16px;
 	}
 
 	.btn-main {
-		margin-right: 48px;
-
-		@include break(sm) {
-			margin-right: 32px;
-		}
-
+		margin-right: 24px;
 
 		@include break(xs) {
 			display: none;

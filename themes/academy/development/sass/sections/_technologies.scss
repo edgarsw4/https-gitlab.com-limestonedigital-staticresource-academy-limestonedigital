@@ -1,6 +1,7 @@
 .technologies {
     padding-top: 80px;
     padding-bottom: 40px;
+    overflow: hidden;
 
     @include break(xs) {
         padding-bottom: 32px;

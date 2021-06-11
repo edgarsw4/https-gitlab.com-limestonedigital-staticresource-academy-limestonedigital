@@ -25,7 +25,7 @@ function get_file_modify($filename){
 function px_site_scripts() {
 
     // Load our main stylesheet.
-    wp_enqueue_style( 'corppix_site-style', get_stylesheet_uri() );
+    // wp_enqueue_style( 'corppix_site-style', get_stylesheet_uri() );
 
     wp_enqueue_style('open_sans_font', 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap');
 
@@ -41,9 +41,9 @@ function px_site_scripts() {
     wp_register_script( 'jquery', get_template_directory_uri() . "/build/js/jquery-3.6.0.min.js", array(), '3.6.0' );
 
     // wp_enqueue_script('jquery', false, array(), false, false);
-    // wp_enqueue_script( 'libs_js', get_template_directory_uri() . '/build/js/libs.js?v='.get_file_modify('/build/js/libs.js'), array('jquery'), null, true );
+    wp_enqueue_script( 'libs_js', get_template_directory_uri() . '/build/js/libs.js?v='.get_file_modify('/build/js/libs.js'), array('jquery'), null, true );
 
-    wp_enqueue_script( 'customization_js', get_template_directory_uri() . '/build/js/customization.js?v=1&d='.get_file_modify('/build/js/customization.js'), array('jquery'), null, true );
+    wp_enqueue_script( 'customization_js', get_template_directory_uri() . '/build/js/customization.js?v=1&d='.get_file_modify('/build/js/customization.js'), array('jquery', 'libs_js'), null, true );
 
     // static variables
     $vars = array(
@@ -423,3 +423,34 @@ function add_head_code(){
         echo $options['gtm_code'];
     }
 }
+
+add_action( 'corppix_after_open_body_tag', 'add_body_code' );
+
+function add_body_code(){
+    global $options;
+
+	if (!isset($options) || empty($options)) {
+        $options = get_fields('options');
+    }
+
+    if ($options['gtm_code_body']) {
+        echo $options['gtm_code_body'];
+    }
+}
+
+function my_wpcf7_form_elements($html) {
+    $html = str_replace('<option value="">', '<option value="" disabled selected>', $html);
+    return $html;
+}
+add_filter('wpcf7_form_elements', 'my_wpcf7_form_elements');
+
+function terms_shortcode() { 
+ 
+    // Things that you want to do. 
+    $message = get_privacy_policy_url(); 
+     
+    // Output needs to be return
+    return $message;
+} 
+// register shortcode
+add_shortcode('privacy_policy', 'terms_shortcode'); 

@@ -11,7 +11,7 @@ $certificate_image = get_field('certificate_image');
             <div class="col-xs-12 col-md-6 content-col">
                 <h2 class="h2 title"><?php echo $certificate_title; ?></h2>
                 <p class="description"><?php echo $certificate_description; ?></p>
-                <a class="btn-main" href="<?php echo $certificate_button_link; ?>"><?php echo $certificate_button_text; ?></a>
+                <a class="btn-main js-open-popup-activator" href="<?php echo $certificate_button_link; ?>"><?php echo $certificate_button_text; ?></a>
             </div>
             <div class="col-xs-12 col-md-6 img-col">
                 <figure class="certificate-figure">

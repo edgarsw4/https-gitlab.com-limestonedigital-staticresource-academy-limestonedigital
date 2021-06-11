@@ -53,7 +53,7 @@ function js_compile(){
 
 function combile_libs_js(){
 	return gulp.src([
-            'js/intlTelInput.min.js',
+            'js/js.cookie.js',
 		])
 		.pipe(concat('libs.js'))
 		.pipe(gulp.dest(paths.scripts.dest))

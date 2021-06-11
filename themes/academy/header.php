@@ -42,7 +42,7 @@ $page_class = (isset($args['page_class']))? $args['page_class']: ''; // 404 page
             <div class="row">
                 <div class="col-xs-12 inner">
 
-                    <a href="<?php echo get_site_url(); ?>" class="logo">
+                    <a href="<?php echo pll_home_url(); ?>" class="logo">
                         <svg id="Logo" xmlns="http://www.w3.org/2000/svg"
                              width="153" height="51" viewBox="0 0 153 51">
                             <path class="cls-1" fill="#00b100" fill-rule="evenodd" d="M109.224,93.217V55H98v47h21.267c0.933,0,1.85-.032,2.745-0.1V93a21.7,21.7,0,0,1-3.283.24Zm3.731-29.46h5.773c9.4-.016,15.564,5.639,15.564,14.743,0,6.588-3.2,11.359-8.571,13.5v9.43C137.533,99.224,145,90.8,145,78.51c0-14.391-10.25-23.5-25.735-23.5h-6.327Z" transform="translate(-98 -55)"/>
@@ -79,7 +79,7 @@ $page_class = (isset($args['page_class']))? $args['page_class']: ''; // 404 page
                         ) {
                         ?>
                             <a href="<?php echo $options['header_button_link_'.pll_current_language()]; ?>"
-                            class="btn-main">
+                            class="btn-main js-open-popup-activator">
                                 <?php echo $options['header_button_text_'.pll_current_language()] ?>
                             </a>
                         <?php } ?>
