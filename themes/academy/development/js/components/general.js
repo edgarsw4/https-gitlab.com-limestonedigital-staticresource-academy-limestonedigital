@@ -2,6 +2,7 @@ import Popup from '../modules/popup-window.js';
 import {
     isInViewport,
 } from '../modules/helpers.js';
+import {CountUp} from '../countUp.js';
 
 export function menuClassHandle() {
     const SITE_HEADER = document.querySelector('#site-header');
@@ -155,5 +156,110 @@ function doParallax($element, windowHeight, position) {
             $element.css('bottom', '-'+(newCircleTop / 1.5)+'px');
         }
         
+    }
+}
+
+
+function split_value(val) {
+    const chars = val.split('');
+    let number = '';
+    let text = '';
+
+    chars.forEach(char => {
+        const numerical = /\.|[0-9]/g;
+
+        if (numerical.test(char)) {
+            number += char;
+        } else {
+            text += char;
+        }
+    })
+
+    return {
+        number,
+        text,
+    };
+}
+
+function animate_value(item) {
+    const number_el = document.createElement('span');
+    const value_el = item;
+    const { number, text } = split_value(item.dataset.value);
+    const prefix = (item.dataset.prefix === undefined)? '': item.dataset.prefix;
+    let decimalPlaces = 0;
+
+    if (number.indexOf('.') >= 0) {
+        decimalPlaces = number.length - number.indexOf('.') - 1;
+    }
+
+    number_el.innerText = '0';
+    value_el.innerHTML = '';
+    value_el.prepend(number_el);
+
+    const options = {
+        prefix,
+        decimalPlaces,
+        duration: 1,
+        suffix: text,
+        useGrouping: false,
+    }
+
+    const countUp = new CountUp(number_el, parseFloat(number), options);
+    if (!countUp.error) {
+        countUp.start();
+    } else {
+        console.error(countUp.error);
+    }
+}
+
+function set_value(item) {
+    // const value_el = item.querySelector('.js-value');
+    item.innerHTML = item.dataset.value;
+}
+
+function show_improvement(improvement_el) {
+    return new Promise((resolve, reject) => {
+        improvement_el.classList.add('active');
+        const item = improvement_el.querySelector('.statistic-item .js-value');
+
+        if (window.matchMedia( '(min-width: 768px)' ).matches) {
+            setTimeout(() => {
+                animate_value(item);
+
+                item.classList.add('active');
+
+                resolve(true);
+            }, 500);
+        } else {
+            // no animation for mobile
+            set_value(item);
+
+            item.classList.add('active');
+
+            resolve(true);
+        }
+    });
+}
+
+export function ideaAnimations($) {
+    const improvements_holder = document.querySelector('.statistic-items');
+
+    if (improvements_holder) {
+
+        window.addEventListener('scroll', () => {
+            if ( isInViewport(improvements_holder, 0)  && !improvements_holder.classList.contains('active')) {
+                improvements_holder.classList.add('active');
+
+                const improvements = improvements_holder.querySelectorAll('.statistic-item');
+
+                show_improvement(improvements[0])
+                    .then(result => show_improvement(improvements[1]))
+                    .then(result => show_improvement(improvements[2]))
+                    .then(result => show_improvement(improvements[3]))
+                    .then(result => show_improvement(improvements[4]));
+            }
+        });
+
+        window.dispatchEvent(new CustomEvent('scroll'));
     }
 }

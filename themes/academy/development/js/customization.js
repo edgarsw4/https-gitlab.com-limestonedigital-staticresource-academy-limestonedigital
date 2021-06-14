@@ -7,6 +7,7 @@ import {
 	initPopups,
 	cookieReminderInit,
 	parallax,
+	ideaAnimations,
 } from './components/general.js';
 
 import {
@@ -27,6 +28,7 @@ import {
 		termsPageNavigation($);
 		cookieReminderInit();
 		parallax($);
+		ideaAnimations($);
 	});
 
 })(jQuery);
