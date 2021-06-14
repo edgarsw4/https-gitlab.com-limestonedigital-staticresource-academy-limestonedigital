@@ -1,7 +1,6 @@
 .join {
     margin-top: 160px;
     margin-bottom: 80px;
-    overflow: hidden;
 
     @include break(sm) {
         margin-top: 144px;
@@ -16,8 +15,8 @@
 .join-form-wrapper {
     background-color: #fff;
     border-radius: 10px;
-    overflow: hidden;
     padding: 48px;
+    position: relative;
 
     @include break(sm) {
         padding: 32px;
@@ -25,6 +24,50 @@
 
     @include break(xs) {
         padding: 24px;
+    }
+
+    .circle-4 {
+        position: absolute;
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        bottom: 0;
+        left: 0;
+        transform: translate(-300%, -800%);
+        background: rgba(0, 196, 0, 0.3);
+        z-index: -1;
+
+        @include break(sm) {
+            display: none;
+        }
+    }
+
+    .circle-5 {
+        position: absolute;
+        width: 365px;
+        height: 365px;
+        border-radius: 50%;
+        top: 0;
+        left: 0;
+        transform: translate(-60%, 64%);
+        background: linear-gradient(135deg, rgba(203,239,128,.6) 0%, rgba(0,196,0,.6) 50%, rgba(6,239,155,.6) 100%);
+        z-index: -1;
+
+        &:after {
+            content: '';
+            width: 80%;
+            height: 80%;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #FAFBFA;
+        }
+
+        @include break(sm) {
+            display: none;
+        }
     }
 
     .wpcf7 {

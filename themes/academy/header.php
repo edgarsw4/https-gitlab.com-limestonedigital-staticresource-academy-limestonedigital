@@ -88,8 +88,8 @@ $page_class = (isset($args['page_class']))? $args['page_class']: ''; // 404 page
                             <ul class="language-switcher">
                                 <?php
                                 $args = array(
-                                    'show_flags' => 0, 
-                                    'show_names' => 0, 
+                                    'show_flags' => 1, 
+                                    'show_names' => 1, 
                                     'display_names_as'=>'slug'
                                 );
                                 pll_the_languages($args);

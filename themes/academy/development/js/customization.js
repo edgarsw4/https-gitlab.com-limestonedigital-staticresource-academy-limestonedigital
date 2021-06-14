@@ -6,6 +6,7 @@ import {
 	clickOnHash,
 	initPopups,
 	cookieReminderInit,
+	parallax,
 } from './components/general.js';
 
 import {
@@ -24,7 +25,8 @@ import {
 		clickOnHash($);
 		initPopups();
 		termsPageNavigation($);
-		cookieReminderInit($);
+		cookieReminderInit();
+		parallax($);
 	});
 
 })(jQuery);
