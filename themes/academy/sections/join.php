@@ -10,7 +10,7 @@ $join_form = $all_post_meta['join_form'][0];
                     <div class="circle-4"></div>
                     <div class="circle-5"></div>
 
-                    <h2 class="h2 title"><?php echo $join_title; ?></h2>
+                    <h2 class="h3 title"><?php echo $join_title; ?></h2>
 
                     <?php echo do_shortcode($join_form); ?>
                 </div>

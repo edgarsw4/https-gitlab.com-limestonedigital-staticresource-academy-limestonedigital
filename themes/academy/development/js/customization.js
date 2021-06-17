@@ -8,6 +8,8 @@ import {
 	cookieReminderInit,
 	parallax,
 	ideaAnimations,
+	inputTel,
+	wpcf7Listeners,
 } from './components/general.js';
 
 import {
@@ -19,7 +21,7 @@ import {
 
 	$(function() {
 		menuClassHandle();
-		burger();
+		burger($);
 		inViewportChecking($);
 		ticksListAccordion($);
 		scrollToURLHash($);
@@ -29,6 +31,8 @@ import {
 		cookieReminderInit();
 		parallax($);
 		ideaAnimations($);
+		inputTel($);
+		wpcf7Listeners($);
 	});
 
 })(jQuery);

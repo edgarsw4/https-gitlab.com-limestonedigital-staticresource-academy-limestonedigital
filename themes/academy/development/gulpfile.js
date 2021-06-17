@@ -54,6 +54,7 @@ function js_compile(){
 function combile_libs_js(){
 	return gulp.src([
             'js/js.cookie.js',
+            'js/inputmask.min.js',
 		])
 		.pipe(concat('libs.js'))
 		.pipe(gulp.dest(paths.scripts.dest))

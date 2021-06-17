@@ -22,6 +22,15 @@
     color: #ffffff;
     overflow: hidden;
 
+    &.btn-input {
+        padding: 0;
+
+        button,
+        input[type="submit"] {
+            padding: 16px 24px;
+        }
+    }
+
     &:active,
     &:focus,
     &:hover {
@@ -67,11 +76,13 @@
         cursor: pointer;
         @extend %base-font-family;
         font-size: 16px;
+        font-weight: 600;
         line-height: 1.375;
         color: #ffffff;
         background-color: transparent;
         border: none;
         text-transform: uppercase;
+        padding: 0;
     }
 }
 

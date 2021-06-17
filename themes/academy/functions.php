@@ -14,8 +14,8 @@ add_filter( 'sanitize_file_name', array($corppix, 'custom_sanitize_file_name'), 
 $corppix->px_custom_upload_size_limit(40);
 
 function get_file_modify($filename){
-    if (file_exists(get_template_directory_uri().$filename)) {
-        return filemtime(get_template_directory_uri().$filename);
+    if (file_exists(get_template_directory().$filename)) {
+        return filemtime(get_template_directory().$filename);
     }
 
     return 0;
@@ -27,7 +27,7 @@ function px_site_scripts() {
     // Load our main stylesheet.
     // wp_enqueue_style( 'corppix_site-style', get_stylesheet_uri() );
 
-    wp_enqueue_style('open_sans_font', 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap');
+    wp_enqueue_style('open_sans_font', 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
 
     wp_enqueue_style('corppix_site_style', get_template_directory_uri().'/build/styles/style.css?v='.get_file_modify('/build/styles/style.css'));
 

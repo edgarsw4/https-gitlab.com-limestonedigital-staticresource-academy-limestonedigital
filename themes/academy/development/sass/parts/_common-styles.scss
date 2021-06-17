@@ -45,6 +45,30 @@ body {
     p, div {
         @extend %base-font-size;
     }
+
+    &.safari {
+        .gradient-1,
+        .gradient-2,
+        .gradient-3,
+        .gradient-4,
+        .circle-1,
+        .circle-2,
+        .circle-3,
+        .circle-4,
+        .circle-5 {
+            display: none;
+        }
+
+        .btn-main {
+            &:before {
+                background: #06EF39;
+            }
+
+            &:after {
+                background: #00C400;
+            }
+        }
+    }
 }
 
 .hidden {
@@ -101,6 +125,11 @@ a {
     @extend %h4;
 }
 
+.wrapper {
+    @include break(sm) {
+        overflow: hidden;
+    }
+}
 
 #main-wrapper {
     min-height: 100vh;
@@ -108,6 +137,8 @@ a {
     flex-direction: column;
     // overflow: hidden;
     position: relative;
+    padding-top: 140px;
+    padding-bottom: 80px;
 
     &:before {
         content: '';
@@ -119,8 +150,25 @@ a {
         background-color: #FAFBFA;
         z-index: -1;
     }
+
+    @include break(sm) {
+        overflow: hidden;
+    }
+
+    @include break(xs) {
+        padding-top: 85px;
+        padding-bottom: 48px;
+    }
 }
 
-// .wpcf7-response-output {
-// 	display: none!important;
-// }
+.wpcf7-response-output {
+	display: none!important;
+}
+
+.error-404 {
+    text-align: center;
+
+    .code {
+        color: #00C400;
+    }
+}

@@ -190,14 +190,12 @@
 
 
 .language-switcher-wrapper {
-    width: 82px;
+    width: 94px;
     height: 46px;
     position: relative;
-    margin-right: 24px;
     z-index: 9;
 
     @include break(sm) {
-        margin-right: 0;
         width: 100vw;
     }
 
@@ -263,7 +261,7 @@
 
     a {
         text-transform: uppercase;
-        color: #00C400;
+        color: #333333;
         text-decoration: none;
         font-size: 14px;
         line-height: 16px;
@@ -326,6 +324,13 @@
                     display: none;
                 }
             }
+        }
+    }
+
+    .lang-item {
+        span {
+            margin-left: 12px!important;
+            margin-right: 12px;
         }
     }
 

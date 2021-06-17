@@ -1,5 +1,4 @@
 .program {
-    overflow: hidden;
 
     @include break(xs) {
         margin-top: 24px;
@@ -33,6 +32,10 @@
         border-radius: 332px;
         transform: translate(-50%, -50%);
         z-index: -1;
+
+        @include break(sm) {
+            display: none;
+        }
     }
 
     .gradient-4 {
@@ -47,13 +50,30 @@
         border-radius: 332px;
         transform: translate(50%, 50%);
         z-index: -1;
+
+        @include break(sm) {
+            display: none;
+        }
+    }
+
+    .title {
+        position: sticky;
+        top: 140px;
     }
 
     .module {
         margin-top: 80px;
+        transition: transform 1s ease,opacity 1s ease;
+        transform: translateY(40px);
+		opacity: 0;
 
         @include break(sm) {
             margin-top: 48px;
+        }
+
+        @include break(xs) {
+            transform: translateY(0);
+            opacity: 1;
         }
 
         &:first-child {
@@ -63,6 +83,12 @@
                 margin-top: 48px;
             }
         }
+
+        .mobile &,
+        &.in-viewport {
+            transform: translateY(0);
+            opacity: 1;
+		}
     }
 
     .module-title {

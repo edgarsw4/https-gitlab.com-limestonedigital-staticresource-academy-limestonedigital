@@ -25,6 +25,12 @@
         }
     }
 
+    .about-figure {
+        @include break(sm) {
+            text-align: center;
+        }
+    }
+
     .about-items {
         margin-top: 24px;
 

@@ -40,6 +40,10 @@
         top: 0;
         transform: translate(-50%, -50%);
         z-index: -1;
+
+        @include break(sm) {
+            display: none;
+        }
     }
 
     .gradient-2 {

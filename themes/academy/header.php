@@ -1,15 +1,22 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
 <?php
+require_once get_template_directory() . '/inc/Mobile_Detect.php';
+
 $post_id       = get_queried_object_id();
 global $all_post_meta;
 global $options;
 $all_post_meta = get_post_meta( $post_id );
 $options    = get_fields('options');
+$detect = new Mobile_Detect;
+// additional page class
+$body_class = ($detect->isSafari())? 'safari': '';
+$body_class .= ($detect->isMobile())? ' mobile': '';
+
 ?>
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>" />
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=5" />
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
     <meta name="format-detection" content="telephone=no" />
     <meta name="SKYPE_TOOLBAR" content ="SKYPE_TOOLBAR_PARSER_COMPATIBLE"/>
     <?php if (is_front_page()) { ?>
@@ -22,13 +29,7 @@ $options    = get_fields('options');
     <?php wp_head(); ?>
     <?php do_action('corppix_before_close_head_tag'); ?>
 </head>
-<?php
-
-// additional page class
-$page_class = (isset($args['page_class']))? $args['page_class']: ''; // 404 page body class adding
-
-?>
-<body <?php body_class($page_class); ?>>
+<body <?php body_class($body_class); ?>>
 
 <?php do_action('corppix_after_open_body_tag'); ?>
 

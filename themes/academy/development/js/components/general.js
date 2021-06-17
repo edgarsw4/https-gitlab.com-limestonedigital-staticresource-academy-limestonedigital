@@ -27,7 +27,7 @@ export function menuClassHandle() {
     });
 }
 
-export function burger() {
+export function burger($) {
   // BURGER
   const $menuBtn = $('.menu-btn');
   const $siteHeader = $('.site-header');
@@ -88,7 +88,7 @@ export function initPopups() {
 
 export function inViewportChecking($) {
     const STAGES_ITEMS             = document.querySelectorAll(
-        '.stages-holder .stage'
+        '.stages-holder .stage, .program .module, .technologies'
     );
 
     $(window).on('scroll', () => {
@@ -129,7 +129,11 @@ export function cookieReminderInit() {
 
 export function parallax($) {
     function parallaxEvent() {
-        if (!window.matchMedia('(max-width: 1439px)').matches) {
+        if (
+            !window.matchMedia('(max-width: 1439px)').matches &&
+            !$('body').hasClass('safari') &&
+            !$('body').hasClass('mobile')
+        ) {
             const windowHeight = $(window).height();
             doParallax($('.circle-1'), windowHeight, 'top');
             doParallax($('.circle-2'), windowHeight, 'bottom');
@@ -222,7 +226,7 @@ function show_improvement(improvement_el) {
         improvement_el.classList.add('active');
         const item = improvement_el.querySelector('.statistic-item .js-value');
 
-        if (window.matchMedia( '(min-width: 768px)' ).matches) {
+        if (window.matchMedia( '(min-width: 768px)' ).matches && !$('body').hasClass('mobile')) {
             setTimeout(() => {
                 animate_value(item);
 
@@ -252,14 +256,47 @@ export function ideaAnimations($) {
 
                 const improvements = improvements_holder.querySelectorAll('.statistic-item');
 
-                show_improvement(improvements[0])
-                    .then(result => show_improvement(improvements[1]))
-                    .then(result => show_improvement(improvements[2]))
-                    .then(result => show_improvement(improvements[3]))
-                    .then(result => show_improvement(improvements[4]));
+                show_improvement(improvements[0]);
+                show_improvement(improvements[1]);
+                show_improvement(improvements[2]);
+                show_improvement(improvements[3]);
+                show_improvement(improvements[4]);
+                    // .then(result => show_improvement(improvements[1]))
+                    // .then(result => show_improvement(improvements[2]))
+                    // .then(result => show_improvement(improvements[3]))
+                    // .then(result => show_improvement(improvements[4]));
             }
         });
 
         window.dispatchEvent(new CustomEvent('scroll'));
     }
+}
+
+export function inputTel($) {
+    // $('input[type="tel"]').inputmask("99-9999999");
+    $('input[type="tel"]').each(function(){
+        Inputmask("+999 99-999-99-99").mask(this);
+
+        const $input = $(this);
+
+        $input.on('focus', () => {
+            if ($input.val() === '') {
+                $input.val('+380');
+            }
+        })
+    });
+    // const selector = document.getElementById("selector");
+    
+}
+
+export function wpcf7Listeners($) {
+    document.addEventListener( 'wpcf7mailsent', function( event ) {
+        const $wrapper = $(event.target).closest('.join-form-wrapper');
+
+        console.log($wrapper);
+
+        if ($wrapper[0]) {
+            popup_windows.openOnePopup('#thanks-join-popup', 1000);
+        }
+    });
 }
