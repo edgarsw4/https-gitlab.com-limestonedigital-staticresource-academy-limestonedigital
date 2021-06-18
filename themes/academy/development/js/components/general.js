@@ -293,10 +293,13 @@ export function wpcf7Listeners($) {
     document.addEventListener( 'wpcf7mailsent', function( event ) {
         const $wrapper = $(event.target).closest('.join-form-wrapper');
 
-        console.log($wrapper);
-
         if ($wrapper[0]) {
             popup_windows.openOnePopup('#thanks-join-popup', 1000);
         }
     });
+}
+
+export function stickyfill() {
+    Stickyfill.forceSticky();
+    Stickyfill.add(document.querySelectorAll('[data-sticky]'));
 }

@@ -10,6 +10,7 @@ import {
 	ideaAnimations,
 	inputTel,
 	wpcf7Listeners,
+	stickyfill,
 } from './components/general.js';
 
 import {
@@ -33,6 +34,7 @@ import {
 		ideaAnimations($);
 		inputTel($);
 		wpcf7Listeners($);
+		stickyfill();
 	});
 
 })(jQuery);

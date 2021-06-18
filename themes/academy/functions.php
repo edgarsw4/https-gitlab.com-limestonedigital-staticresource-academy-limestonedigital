@@ -454,3 +454,7 @@ function terms_shortcode() {
 } 
 // register shortcode
 add_shortcode('privacy_policy', 'terms_shortcode'); 
+
+function escape_dashes($str) {
+    return str_replace("<", "&lt;", str_replace(">", "&gt;", $str));
+}
