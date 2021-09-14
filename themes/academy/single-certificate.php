@@ -14,10 +14,6 @@ $options    = get_fields('options');
 
 <div class="certificate-container">
 
-    <?php
-    // <a class="download-certificate" href=""><?php echo __('Download'); </a>
-    ?>
-
     <div class="certificate">
 
         <div class="certificate-left-column">
@@ -38,7 +34,6 @@ $options    = get_fields('options');
         </div>
 
         <div class="certificate-right-column">
-            <div class="certificate-qr-code"></div>
 
             <div class="certificate-content">
                 <p class="certificate-label"><?php echo $all_post_meta['certificate_name_label'][0]; ?></p>

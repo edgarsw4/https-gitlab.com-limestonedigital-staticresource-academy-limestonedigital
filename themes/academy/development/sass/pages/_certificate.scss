@@ -17,28 +17,6 @@
     justify-content: flex-end;
 }
 
-.download-certificate {
-    background-color: #00C400;
-    border-radius: 3px;
-    color: #fff;
-    transition: all .3s;
-    text-decoration: none;
-    padding: 10px 20px 10px 46px;
-    margin-top: 24px;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 20px;
-    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTYuNzUgMEM2LjMxMjUgMCA2IDAuMzQzNzUgNiAwLjc1VjZIMy4yNUMyLjY4NzUgNiAyLjQwNjI1IDYuNjg3NSAyLjgxMjUgNy4wOTM3NUw3LjU2MjUgMTEuODQzOEM3Ljc4MTI1IDEyLjA2MjUgOC4xODc1IDEyLjA2MjUgOC40MDYyNSAxMS44NDM4TDEzLjE1NjIgNy4wOTM3NUMxMy41NjI1IDYuNjg3NSAxMy4yODEyIDYgMTIuNzE4OCA2SDEwVjAuNzVDMTAgMC4zNDM3NSA5LjY1NjI1IDAgOS4yNSAwSDYuNzVaTTE2IDExLjc1QzE2IDExLjM0MzggMTUuNjU2MiAxMSAxNS4yNSAxMUgxMC42NTYyTDkuMTI1IDEyLjUzMTJDOC41IDEzLjE4NzUgNy40Njg3NSAxMy4xODc1IDYuODQzNzUgMTIuNTMxMkw1LjMxMjUgMTFIMC43NUMwLjMxMjUgMTEgMCAxMS4zNDM4IDAgMTEuNzVWMTUuMjVDMCAxNS42ODc1IDAuMzEyNSAxNiAwLjc1IDE2SDE1LjI1QzE1LjY1NjIgMTYgMTYgMTUuNjg3NSAxNiAxNS4yNVYxMS43NVpNMTIuMTI1IDE0LjVDMTIuMTI1IDE0Ljg0MzggMTEuODQzOCAxNS4xMjUgMTEuNSAxNS4xMjVDMTEuMTU2MiAxNS4xMjUgMTAuODc1IDE0Ljg0MzggMTAuODc1IDE0LjVDMTAuODc1IDE0LjE1NjIgMTEuMTU2MiAxMy44NzUgMTEuNSAxMy44NzVDMTEuODQzOCAxMy44NzUgMTIuMTI1IDE0LjE1NjIgMTIuMTI1IDE0LjVaTTE0LjEyNSAxNC41QzE0LjEyNSAxNC44NDM4IDEzLjg0MzggMTUuMTI1IDEzLjUgMTUuMTI1QzEzLjE1NjIgMTUuMTI1IDEyLjg3NSAxNC44NDM4IDEyLjg3NSAxNC41QzEyLjg3NSAxNC4xNTYyIDEzLjE1NjIgMTMuODc1IDEzLjUgMTMuODc1QzEzLjg0MzggMTMuODc1IDE0LjEyNSAxNC4xNTYyIDE0LjEyNSAxNC41WiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+Cg==);
-    background-repeat: no-repeat;
-    background-position: 14px center;
-
-    &:hover {
-        text-decoration: none;
-        background-color: rgba(6,239,57,0.7);
-        color: #fff;
-    }
-}
-
 .certificate {
     margin-top: 24px;
     margin-bottom: 24px;
@@ -145,13 +123,8 @@
     flex-direction: column;
 }
 
-.certificate-qr-code {
-    width: 65px;
-    height: 65px;
-}
-
 .certificate-content {
-    margin-top: 107px;
+    margin-top: 172px;
 }
 
 .certificate-label {
