@@ -11,6 +11,7 @@ import {
 	inputTel,
 	wpcf7Listeners,
 	stickyfill,
+	certificateAnimation,
 } from './components/general.js';
 
 import {
@@ -35,6 +36,7 @@ import {
 		inputTel($);
 		wpcf7Listeners($);
 		stickyfill();
+		certificateAnimation($);
 	});
 
 })(jQuery);

@@ -5,7 +5,7 @@ $certificate_button_text = $all_post_meta['certificate_button_text'][0];
 $certificate_button_link = $all_post_meta['certificate_button_link'][0];
 $certificate_image = get_field('certificate_image');
 ?>
-<section id="certificate" class="certificate">
+<section id="certificate-section" class="certificate-section">
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-md-6 content-col">

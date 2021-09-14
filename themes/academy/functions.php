@@ -28,6 +28,7 @@ function px_site_scripts() {
     // wp_enqueue_style( 'corppix_site-style', get_stylesheet_uri() );
 
     wp_enqueue_style('open_sans_font', 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+    wp_enqueue_style('montserrat_font', 'https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;900&display=swap');
 
     wp_enqueue_style('corppix_site_style', get_template_directory_uri().'/build/styles/style.css?v='.get_file_modify('/build/styles/style.css'));
 
@@ -457,4 +458,83 @@ add_shortcode('privacy_policy', 'terms_shortcode');
 
 function escape_dashes($str) {
     return str_replace("<", "&lt;", str_replace(">", "&gt;", $str));
+}
+
+//// certificates
+
+register_post_type('certificate', array(
+    'label' => 'Certificates',
+    'labels' => array(
+        'name' => 'Certificates',
+        'singular_name' => 'Certificate',
+        'menu_name' => 'Certificates',
+        'all_items' => __('All Certificates', 'academy'),
+        'add_new' => __('Add new', 'academy'),
+        'add_new_item' => __('Add new', 'academy'),
+        'edit_item' => __('Edit Certificate', 'academy'),
+        'new_item' => __('New Certificate', 'academy'),
+        'view_item' => __('See Certificate', 'academy'),
+        'search_items' => __('Search Certificates', 'academy'),
+        'not_found' => __('No Certificate', 'academy'),
+        'not_found_in_trash' => __('No Certificate in Trash', 'academy')
+    ),
+    'single' => 'certificate',
+    'singular_label' => 'Certificate',
+    'description' => '',
+    'public' => true,
+    'show_in_rest' => true,
+    'rest_base' => 'Certificate',
+    'has_archive' => false,
+    'query_var' => 'certificate',
+    'rewrite' => array(
+        'slug' => 'certificate',
+        'with_front' => false,
+        'feed'=> true,
+        'pages'=> true
+    ),
+    'show_ui' => true,
+    'add_new_item' => __('Add New Certificate','academy'),
+    'menu_position' => 5,
+    'menu_icon' => 'dashicons-tag',
+    'hierarchical' => false,
+    'supports' => array('title', 'custom-fields', 'author', 'thumbnail'),
+));
+
+register_taxonomy('certificate_cat', 'certificate',
+    array(
+        'hierarchical' => true,
+        'label' => __('Category', 'academy'),
+        'show_admin_column' => true,
+        'query_var' => 'certificate_cat',
+        'rewrite' => array(
+            'slug' => 'certificate-cat',
+            'with_front' => true,
+            'feed'=> true,
+            'pages'=> true
+        ),
+        'show_ui' => true
+    )
+);
+
+add_action( 'save_post_certificate', 'update_certificate_slug', 10, 3 );
+function update_certificate_slug( $post_id, $post, $update ){
+    if (!$update) {
+        $post->post_name = bin2hex(random_bytes(32));
+        wp_update_post($post);
+    }
+}
+
+add_action( 'acf/save_post', 'set_certificate_title', 10, 3 );
+function set_certificate_title( $post_ID){
+    $post_after = get_post($post_ID);
+
+    if ($post_after->post_type === 'certificate' && empty($post_after->post_title)) {
+        $course = get_field('certificate_course', $post_after);
+        $name = get_field('certificate_name', $post_after);
+
+        if (!empty($course) && !empty($name)) {
+            $post_after->post_title = $course . ' - ' . $name;
+            wp_update_post($post_after);
+        }
+    }
 }

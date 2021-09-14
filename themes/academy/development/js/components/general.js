@@ -52,16 +52,19 @@ export function burger($) {
 export function clickOnHash($) {
     $('a').click(function(event) {
         const link = $(event.target).attr('href');
-        const hash = link.substr(link.indexOf('#'));
-        const $hash = $(hash);
+        if (link) {
+            const hash = link.substr(link.indexOf('#'));
+            const $hash = $(hash);
+    
+            if ($hash[0]) {
+                const offset = $hash.offset().top - $('#site-header').height();
+    
+                $('html, body').animate({
+                    scrollTop: offset,
+                }, 1500, 'swing');
+            }
+        }
 
-        if ($hash[0]) {
-            const offset = $hash.offset().top - $('#site-header').height();
-
-			$('html, body').animate({
-				scrollTop: offset,
-			}, 1500, 'swing');
-		}
     });
 }
 
@@ -91,16 +94,18 @@ export function inViewportChecking($) {
         '.stages-holder .stage, .program .module, .technologies'
     );
 
-    $(window).on('scroll', () => {
-        // Adding scroll animation to Stage items
-        ( STAGES_ITEMS ) && [...STAGES_ITEMS].forEach( (item) => {
-            if ( isInViewport(item, 0) ) {
-                item.classList.add('in-viewport');
-            } else {
-                item.classList.remove('in-viewport');
-            }
+    if (STAGES_ITEMS) {
+        $(window).on('scroll', () => {
+            // Adding scroll animation to Stage items
+            ( STAGES_ITEMS ) && [...STAGES_ITEMS].forEach( (item) => {
+                if ( isInViewport(item, 0) ) {
+                    item.classList.add('in-viewport');
+                } else {
+                    item.classList.remove('in-viewport');
+                }
+            });
         });
-    });
+    }
 }
 
 export function cookieReminderInit() {
@@ -149,17 +154,19 @@ export function parallax($) {
 }
 
 function doParallax($element, windowHeight, position) {
-    const elementTop = $element.offset().top;
-    const circleTop = window.scrollY - elementTop + windowHeight;
-
-    if (circleTop > 0 && circleTop < windowHeight) {
-        const newCircleTop = circleTop / 2;
-        if ('top' === position) {
-            $element.css('top', newCircleTop+'px');
-        } else {
-            $element.css('bottom', '-'+(newCircleTop / 1.5)+'px');
+    if ($element[0]) {
+        const elementTop = $element.offset().top;
+        const circleTop = window.scrollY - elementTop + windowHeight;
+    
+        if (circleTop > 0 && circleTop < windowHeight) {
+            const newCircleTop = circleTop / 2;
+            if ('top' === position) {
+                $element.css('top', newCircleTop+'px');
+            } else {
+                $element.css('bottom', '-'+(newCircleTop / 1.5)+'px');
+            }
+            
         }
-        
     }
 }
 
@@ -302,4 +309,9 @@ export function wpcf7Listeners($) {
 export function stickyfill() {
     Stickyfill.forceSticky();
     Stickyfill.add(document.querySelectorAll('[data-sticky]'));
+}
+
+export function certificateAnimation($) {
+    console.log($);
+    $('.certificate-title').addClass('certificate-title--active');
 }
