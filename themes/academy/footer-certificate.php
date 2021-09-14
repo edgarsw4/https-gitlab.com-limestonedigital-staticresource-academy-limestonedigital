@@ -8,8 +8,6 @@
 
 
 <?php
-include( locate_template('parts/popups.php', false, false ));
-
 do_action('corppix_after_site_page_tag');
 
 wp_footer();

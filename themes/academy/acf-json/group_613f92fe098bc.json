@@ -15,7 +15,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "Certificate <br>Of Completion",
+            "default_value": "Certificate <br>Of Participation",
             "placeholder": "",
             "prepend": "",
             "append": "",
@@ -23,7 +23,7 @@
         },
         {
             "key": "field_613f92fe234b5",
-            "label": "Name label",
+            "label": "Presented to label",
             "name": "certificate_name_label",
             "type": "text",
             "instructions": "",
@@ -172,5 +172,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1631556396
+    "modified": 1631619700
 }

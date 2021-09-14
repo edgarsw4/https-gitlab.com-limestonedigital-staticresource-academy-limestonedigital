@@ -23,7 +23,7 @@
         },
         {
             "key": "field_613f92287810a",
-            "label": "Name label",
+            "label": "Presented to label",
             "name": "certificate_name_label",
             "type": "text",
             "instructions": "",
@@ -230,5 +230,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1631556413
+    "modified": 1631619678
 }

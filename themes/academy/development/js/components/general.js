@@ -312,6 +312,5 @@ export function stickyfill() {
 }
 
 export function certificateAnimation($) {
-    console.log($);
     $('.certificate-title').addClass('certificate-title--active');
 }
