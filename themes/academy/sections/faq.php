@@ -1,6 +1,7 @@
 <?php
 $faq_title = $all_post_meta['faq_title'][0];
 $ticks_list = get_field('ticks_list');
+if (!empty($ticks_list)) {
 ?>
 <section id="faq" class="faq">
     <div class="container">
@@ -33,3 +34,5 @@ $ticks_list = get_field('ticks_list');
         </div>
     </div>
 </section>
+<?php
+}
