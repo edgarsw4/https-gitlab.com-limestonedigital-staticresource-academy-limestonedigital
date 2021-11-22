@@ -1,0 +1,82 @@
+.site-footer {
+	position: relative;
+	overflow: hidden;
+	z-index: 282;
+	background-color: #7256BF;
+	height: auto;
+	padding: 48px 0;
+	min-height: 0;
+	color: #ffffff;
+
+	.clutch-desktop {
+		@include break(md) {
+			display: none;
+		}
+	}
+
+	.clutch-tablet {
+		display: none;
+
+		@include break(md) {
+			display: block;
+		}
+	}
+
+	.footer-logo-ahk {
+		display: block;
+		margin-top: 16px;
+	}
+
+	.footer-caption {
+		color: #AA9AD9;
+		text-transform: uppercase;
+		margin-bottom: 32px;
+
+		@include break(xs) {
+			margin-top: 8px;
+			margin-bottom: 24px;
+		}
+	}
+
+	.address {
+		p {
+			margin-top: 16px;
+		}
+	}
+
+	.menu {
+		li {
+			margin-top: 16px;
+		}
+
+		a,
+		span {
+			color: #fff;
+			text-decoration: none;
+		}
+	}
+
+	.social-links {
+		a {
+			display: block;
+			margin-top: 16px;
+			color: #fff;
+			text-decoration: none;
+		}
+	}
+
+	.footer-line {
+		background-color: #AA9AD9;
+		width: 100%;
+		height: 1px;
+		margin: 40px auto;
+
+		@include break(xs) {
+			margin: 32px auto;
+		}
+	}
+
+	.copyright {
+		color: #AA9AD9;
+	}
+}

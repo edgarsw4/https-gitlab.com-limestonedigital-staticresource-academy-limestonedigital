@@ -12,6 +12,10 @@ $detect = new Mobile_Detect;
 // additional page class
 $body_class = ($detect->isSafari())? 'safari': '';
 $body_class .= ($detect->isMobile())? ' mobile': '';
+$body_class .= ($detect->isTablet())? ' tablet': '';
+
+$popup_button = $args['popup_button'];
+$menu = (empty($args['menu']))? 'primary': $args['menu'];
 
 ?>
 <head>
@@ -56,7 +60,7 @@ $body_class .= ($detect->isMobile())? ' mobile': '';
                             <?php wp_nav_menu( [ 
                                 //'menu' => 'Header menu '.strtoupper(pll_current_language()),
                                 'container' => 'nav',
-                                'theme_location'  => 'primary'
+                                'theme_location'  => $menu
                             ] ); ?>
 
                             <ul class="language-switcher language-switcher-tablet">
@@ -64,6 +68,7 @@ $body_class .= ($detect->isMobile())? ' mobile': '';
                                 $args = array(
                                     'show_flags' => 0, 
                                     'show_names' => 0, 
+                                    'force_home' => 0,
                                     'display_names_as'=>'slug'
                                 );
                                 pll_the_languages($args);
@@ -77,6 +82,7 @@ $body_class .= ($detect->isMobile())? ' mobile': '';
                         if (
                             isset($options['header_button_link_'.pll_current_language()])
                             && !empty($options['header_button_link_'.pll_current_language()])
+                            && $popup_button
                         ) {
                         ?>
                             <a href="<?php echo $options['header_button_link_'.pll_current_language()]; ?>"
@@ -90,6 +96,7 @@ $body_class .= ($detect->isMobile())? ' mobile': '';
                                 <?php
                                 $args = array(
                                     'show_flags' => 1, 
+                                    'force_home' => 0,
                                     'show_names' => 1, 
                                     'display_names_as'=>'slug'
                                 );

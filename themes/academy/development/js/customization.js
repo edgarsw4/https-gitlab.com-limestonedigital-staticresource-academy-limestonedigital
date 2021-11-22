@@ -12,6 +12,7 @@ import {
 	wpcf7Listeners,
 	stickyfill,
 	certificateAnimation,
+	initCases,
 } from './components/general.js';
 
 import {
@@ -37,6 +38,7 @@ import {
 		wpcf7Listeners($);
 		stickyfill();
 		certificateAnimation($);
+		initCases($);
 	});
 
 })(jQuery);

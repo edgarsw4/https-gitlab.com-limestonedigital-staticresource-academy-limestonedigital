@@ -528,6 +528,7 @@ class Corppix {
         // Specify which menu location will be used in theme
         register_nav_menus( array(
             'primary'      => __( 'Primary Menu', 'corppix_site' ),
+            'secondary'      => __( 'Secondary Menu', 'corppix_site' ),
             'mobile_menu'  => __( 'Mobile menu', 'corppix_site' ),
             'fixed_menu'   => __( 'Fixed menu', 'corppix_site' ),
             'footer-menu'   => __( 'Footer menu', 'corppix_site' ),
@@ -574,7 +575,7 @@ class Corppix {
         $this->px_remove_Archive_word_from_title();
 
         // force remove cycling links
-        $this->px_no_link_current_page();
+        // $this->px_no_link_current_page();
 
         // Register widget area.
         $this->px_widgets_init();

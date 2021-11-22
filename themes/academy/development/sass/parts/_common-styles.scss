@@ -137,8 +137,6 @@ a {
     flex-direction: column;
     overflow: hidden;
     position: relative;
-    padding-top: 140px;
-    padding-bottom: 80px;
 
     &:before {
         content: '';
@@ -154,15 +152,14 @@ a {
     @include break(sm) {
         overflow: hidden;
     }
-
-    @include break(xs) {
-        padding-top: 85px;
-        padding-bottom: 48px;
-    }
 }
 
 .wpcf7-response-output {
 	display: none!important;
+}
+
+.error-404-content {
+    padding: 100px 0;
 }
 
 .error-404 {

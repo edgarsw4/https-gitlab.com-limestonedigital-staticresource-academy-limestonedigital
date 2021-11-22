@@ -54,6 +54,7 @@ function js_compile(){
 function combile_libs_js(){
 	return gulp.src([
             'js/js.cookie.js',
+            'js/slick.min.js',
             'js/inputmask.min.js',
             'js/stickyfill.min.js',
 		])

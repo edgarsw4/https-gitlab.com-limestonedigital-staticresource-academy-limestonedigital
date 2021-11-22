@@ -4,10 +4,13 @@
 @import "_mixin.scss";
 @import "_selectors.scss";
 
+@import "parts/_slick.scss";
+@import "parts/_slick-dots.scss";
 @import "parts/_common-styles.scss";
 @import "parts/_grid.scss";
 @import "components/_buttons.scss";
 @import "parts/_header.scss";
+@import "parts/_footer.scss";
 @import "parts/_form.scss";
 @import "parts/_first-section.scss";
 @import "parts/_modal_window.scss";
@@ -25,6 +28,10 @@
 @import "sections/_teacher.scss";
 @import "sections/_join.scss";
 @import "sections/_faq.scss";
+
+@import "sections/_home-header.scss";
+@import "sections/_courses.scss";
+@import "sections/_home-about.scss";
 
 @import "pages/_terms-page.scss";
 @import "pages/_certificate.scss";

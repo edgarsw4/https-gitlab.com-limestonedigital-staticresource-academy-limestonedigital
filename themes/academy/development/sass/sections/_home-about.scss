@@ -1,0 +1,144 @@
+.home-about {
+    padding: 100px 0;
+    overflow: hidden;
+    background-color: #fff;
+
+    @include break(md) {
+        padding: 80px 0;
+    }
+
+    @include break(sm) {
+        padding: 80px 0 100px;
+    }
+
+    @include break(xs) {
+        padding: 60px 0;
+    }
+
+    .container {
+        position: relative;
+
+        &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translate3d(0, -50%, 0);
+            background-repeat: no-repeat;
+            background-image: url('../img/map.png');
+            width: 758px;
+            height: 762px;
+            z-index: 0;
+            background-size: 84%;
+            background-position: 100% center;
+
+            @include break(sm) {
+                display: none;
+            }
+        }
+    }
+
+    .h2 {
+        margin-bottom: 47px;
+
+        @include break(md) {
+            margin-bottom: 80px;
+        }
+
+        @include break(sm) {
+            margin-bottom: 40px;
+        }
+
+        @include break(xs) {
+            margin-bottom: 30px;
+        }
+    }
+
+    .text {
+        margin-bottom: 40px;
+        padding-bottom: 40px;
+        border-bottom: 2px solid #1ACA1A;;
+        // margin-right: 195px;
+
+        // @include break(md) {
+        //     margin-right: 95px;
+        // }
+
+        // @include break(sm) {
+        //     margin-right: 0;
+        // }
+    }
+
+    .quote {
+        display: flex;
+        align-items: center;
+        min-height: 115px;
+        position: relative;
+
+        @include break(md) {
+            margin-top: 34px;
+        }
+
+        @include break(sm) {
+            margin-top: 30px;
+        }
+    }
+
+    .quote-figure {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 115px;
+
+        @include break(xs) {
+            width: 76px;
+        }
+    }
+
+    .quote-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 139px;
+
+        @include break(md) {
+            padding-right: 95px;
+        }
+
+        @include break(sm) {
+            padding-right: 0;
+        }
+
+        @include break(xs) {
+            padding-right: 0;
+            padding-left: 0;
+        }
+    }
+
+    .quote-author {
+        @include break(xs) {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-left: 107px;
+            min-height: 76px;
+        }
+    }
+
+    .quote-author-position {
+        text-transform: uppercase;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+
+        @include break(xs) {
+            display: block;
+        }
+    }
+
+    .quote-text {
+        margin-top: 16px;
+        max-width: 388px;
+    }
+}

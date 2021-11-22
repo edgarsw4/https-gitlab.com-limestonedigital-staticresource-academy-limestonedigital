@@ -3,7 +3,7 @@
  * Template name: Сourse page
  */
 
-get_header();
+get_header(null, array('popup_button' => true, 'menu' => 'secondary'));
 if (empty($all_post_meta) || empty($options)) {
     $all_post_meta = get_post_meta( get_queried_object_id() );
     $all_meta = $all_post_meta;

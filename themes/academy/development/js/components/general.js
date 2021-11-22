@@ -314,3 +314,28 @@ export function stickyfill() {
 export function certificateAnimation($) {
     $('.certificate-title').addClass('certificate-title--active');
 }
+
+export function initCases($) {
+    let isMobile = $('body').hasClass('tablet') || $('body').hasClass('mobile');
+
+    if (!isMobile && $('.js-courses-carousel')[0]) {
+        $('.js-courses-carousel').slick({
+            dots: $('.js-courses-carousel').find('.slick-slide').length > 2,
+            infinite: false,
+            autoplaySpeed: 3000,
+            arrows: false,
+            speed: 300,
+            slidesToShow: 2,
+            responsive: [
+                {
+                    breakpoint: 1199,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        adaptiveHeight: true,
+                    },
+                },
+            ],
+        });
+    }
+}
