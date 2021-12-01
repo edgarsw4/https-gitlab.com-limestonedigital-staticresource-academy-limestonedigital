@@ -12,7 +12,7 @@ $author_text = $all_post_meta['description_author_text'][0];
 
 if ( !empty($caption)) {
 ?>
-<div class="home-about">
+<div class="home-about" id="about-us">
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-md-6">

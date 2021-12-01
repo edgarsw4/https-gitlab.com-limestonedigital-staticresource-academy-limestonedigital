@@ -133,3 +133,29 @@
         border-color: #99e799;
     }
 }
+
+.btn-red {
+    @extend %btn;
+
+    color: #ff0000;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 48px;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+    border: 1px solid #ff0000;
+    border-radius: 100px;
+
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 26px;
+
+
+    &:hover {
+        color: #ff3333;
+        border-color: #ff3333;
+    }
+}

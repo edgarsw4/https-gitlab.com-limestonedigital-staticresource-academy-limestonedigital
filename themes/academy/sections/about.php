@@ -3,7 +3,7 @@ $about_title = $all_post_meta['about_title'][0];
 $about_items = get_field('about_items');
 $about_image = get_field('about_image');
 ?>
-<section id="about" class="about">
+<section id="about-us" class="about">
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-md-9 content-col">

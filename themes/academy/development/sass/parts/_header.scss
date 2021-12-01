@@ -104,6 +104,7 @@
 		line-height: 1.25;
 		text-decoration: none;
 		color: #333333;
+        display: block;
 
 		@include break(sm) {
 			font-weight: 600;

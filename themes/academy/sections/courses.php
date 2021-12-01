@@ -1,5 +1,6 @@
 <?php
 $courses = get_field('courses');
+
 ?>
 <div id="courses" class="courses">
     <div class="container">
@@ -15,18 +16,29 @@ $courses = get_field('courses');
                         $item_description   = $course['description'];
                         $item_button_text   = $course['button_text'];
                         $item_button_url    = get_permalink($course['course']);
+                        $item_finished      = $course['finished'];
+                        $item_class         = ($item_finished)? ' course-box-finished': '';
+                        $item_finished_text = $course['finished_button_text'];
 
-                        echo '<div class="course-box-wrapper"><div class="course-box">';
+                        echo '<div class="course-box-wrapper"><div class="course-box'.$item_class.'">';
                             echo '<p class="upper-caption">'.$item_upper_caption.'</p>';
                             echo '<p class="h4">'.do_shortcode($item_title).'</p>';
                             echo '<div class="description">'.do_shortcode($item_description).'</div>';
 
-                            if ( !empty($item_button_url) && !empty($item_button_text) )
+                            if ( !empty($item_button_url) && !empty($item_button_text) && !$item_finished)
                             echo '<p><a class="btn-green"
                                         href="'.$item_button_url.'">
                                             '.$item_button_text.'
-                                     </a>
-                                  </p>';
+                                        </a>
+                                    </p>';
+
+                            if ($item_finished && $item_finished_text) {
+                                echo '<p><a class="btn-red"
+                                        href="'.$item_button_url.'">
+                                            '.$item_finished_text.'
+                                        </a>
+                                    </p>';
+                            }
                         echo '</div></div>';
                     }
 
