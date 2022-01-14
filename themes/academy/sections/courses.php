@@ -33,10 +33,9 @@ $courses = get_field('courses');
                                     </p>';
 
                             if ($item_finished && $item_finished_text) {
-                                echo '<p><a class="btn-red"
-                                        href="'.$item_button_url.'">
+                                echo '<p><span class="btn-disabled">
                                             '.$item_finished_text.'
-                                        </a>
+                                        </span>
                                     </p>';
                             }
                         echo '</div></div>';

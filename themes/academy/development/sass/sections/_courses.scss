@@ -112,4 +112,13 @@
 
 .course-box-finished {
     background-color: #cccccc;
+    color: #999999;
+
+    .h4, .description {
+        color: #999999;
+    }
+
+    .h4:before {
+        opacity: .5;
+    }
 }
