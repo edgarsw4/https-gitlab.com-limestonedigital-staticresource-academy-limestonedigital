@@ -37,8 +37,13 @@
 
 .course-box-wrapper {
     width: calc(50% - 20px);
-    margin: 0 10px;
+    margin: 10px;
     height: auto;
+
+    @include break(sm) {
+        margin: 10px 0;
+        width: 100%;
+    }
 }
 
 .mobile .course-box-wrapper,
