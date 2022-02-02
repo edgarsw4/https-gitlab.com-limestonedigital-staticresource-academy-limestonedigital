@@ -12,6 +12,7 @@ $courses = get_field('courses');
 
                     foreach ($courses as $course) {
                         $item_upper_caption = $course['upper_caption'];
+                        $item_period        = $course['period'];
                         $item_title         = $course['course_title'];
                         $item_description   = $course['description'];
                         $item_button_text   = $course['button_text'];
@@ -21,7 +22,7 @@ $courses = get_field('courses');
                         $item_finished_text = $course['finished_button_text'];
 
                         echo '<div class="course-box-wrapper"><div class="course-box'.$item_class.'">';
-                            echo '<p class="upper-caption">'.$item_upper_caption.'</p>';
+                            echo '<div class="upper-content"><div class="upper-caption">'.$item_upper_caption.'</div><div class="period">'.$item_period.'</div></div>';
                             echo '<p class="h4">'.do_shortcode($item_title).'</p>';
                             echo '<div class="description">'.do_shortcode($item_description).'</div>';
 

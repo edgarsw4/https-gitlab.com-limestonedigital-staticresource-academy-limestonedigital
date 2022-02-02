@@ -73,12 +73,38 @@
         margin-top: auto;
     }
 
+    .upper-content {
+        display: flex;
+        flex-wrap: wrap;
+    }   
+
     .upper-caption {
         font-weight: 600;
         font-size: 20px;
         line-height: 26px;
         text-transform: uppercase;
         color: #999999;
+        width: 50%;
+
+        @include break(xs) {
+            width: 100%;
+        }
+    }
+
+    .period {
+        font-size: 16px;
+        line-height: 26px;
+        color: #333333;
+        width: 50%;
+        text-align: right;
+
+        @include break(xs) {
+            width: 100%;
+            text-align: left;
+            margin-top: 16px;
+            font-size: 14px;
+            line-height: 133%;
+        }
     }
 
     .h4 {
