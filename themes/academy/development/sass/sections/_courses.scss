@@ -97,6 +97,7 @@
         color: #333333;
         width: 50%;
         text-align: right;
+        font-weight: 600;
 
         @include break(xs) {
             width: 100%;
@@ -145,7 +146,9 @@
     background-color: #cccccc;
     color: #999999;
 
-    .h4, .description {
+    .period,
+    .h4,
+    .description {
         color: #999999;
     }
 
